@@ -1,0 +1,9 @@
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.section {
+	padding-bottom: 1em;
+	padding-top: 1em;
+}
