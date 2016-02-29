@@ -33,12 +33,14 @@
 
 body {
 	color: #7d7873;
+	font-size: 1.25em;
 	font-weight: 300;
 }
 
 .menu {
 	background-color: #333333;
 	color: #F7F4F0;
+	font-size: 0.8em;
 	padding-bottom: 0.75em;
 	padding-top: 0.75em;
 }
@@ -60,19 +62,26 @@ body {
 	background-position: center;
 	background-size: 100% auto;
 	color: #F7F4F0;
-	font-size: 5em;
+	font-size: 4.5em;
 	font-weight: 500;
 	text-align: center;
 	padding-bottom: 1.5em;
 	padding-top: 1.5em;
 	position: relative;
 	text-shadow: 1px 1px 1px #333333;
-	text-transform: uppercase;
 }
 
 .texto-chamada {
-	display: inline-block;
+	display: block;
 	font-size: 0.5em;
+}
+
+.horario {
+	margin-top: 0.75em;
+}
+
+.local {
+	font-size: 0.3em;
 	margin-top: 0.5em;
 }
 
@@ -124,15 +133,37 @@ body {
 	background-color: #f8f8f8;
 }
 
+.endereco {
+	margin-bottom: 0.5em;
+}
+
 .palestrante {
+	border-top: 1px dashed #f0f0f0;
 	clear: left;
 	margin-bottom: 1em;
 	overflow: hidden;
+	padding-top: 1em;
+}
+
+.palestrante:first-child {
+	border-top: 0;
 }
 
 .avatar {
-	border-radius: 100%;
+	border: 5px solid #ebebea;
+	border-radius: 50%;
 	float: left;
 	height: 120px;
+	margin-right: 1em;
 	width: 120px;
+}
+
+.nome {
+	color: #333333;
+	margin-bottom: 0.5em;
+	padding-top: 0.5em;
+}
+
+.palestrante .descricao {
+	font-size: 0.9em;
 }
