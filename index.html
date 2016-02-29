@@ -6,7 +6,7 @@
 	<link rel='stylesheet' href='estilos/reset.css'>
 	<link rel='stylesheet' href='estilos/front7.css'>
 </head>
-<body>
+<body itemscope itemtype='http://schema.org/Event'>
 	<header class='menu'>
 		<nav class='container'>
 			<ul>
@@ -18,24 +18,33 @@
 		</nav>
 	</header>
 	<section class='chamada'>
-		<h1>Front7</h1>
+		<h1 itemprop='name'>Front7</h1>
+		<meta itemprop='startDate' content='2016-03-07T18:30'>
 		<time class='texto-chamada dia'>07 de Março às <span class='horario'>18h30</span></time>
 		<address class='texto-chamada local'>Elo7 - São Paulo</address>
-		<a href='http://goo.gl/forms/PnR57cPKZ1' title='Inscreva-se para o evento Front7' class='inscricao' target='_blank'>Inscreva-se</a>
+
+		<a href='http://goo.gl/forms/PnR57cPKZ1' title='Inscreva-se para o evento Front7' class='inscricao' target='_blank' itemprop='offers' itemscope itemtype='http://schema.org/Offer'>
+			Inscreva-se
+			<meta itemprop='description' content='FREE'>
+			<meta itemprop='price' content='0'>
+			<meta itemprop='priceCurrency' content='BRL'>
+			<link itemprop='url' href='http://elo7.github.io/front7/'>
+		</a>
 		<a title='By Marcosleal (Own work) [CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0) or GFDL (http://www.gnu.org/copyleft/fdl.html)], via Wikimedia Commons' href='https://commons.wikimedia.org/wiki/File%3APonte_estaiada_Octavio_Frias_-_Sao_Paulo.jpg' class='licenca'>By Marcosleal (Own work)</a>
 	</section>
-	<section class='secao container' id='evento'>
+	<section class='secao container' id='evento' itemprop='Organizer' itemscope itemtype='http://schema.org/Organization'>
 		<h2 class='titulo'>O evento</h2>
 		<p class='descricao'>
-			O Front7 é um evento que nasceu dos desenvolvedores do <a href='http://www.elo7.com.br' title='Elo7 | Produtos fora de série' class='elo7'>Elo7</a> com o intuito de propagar conhecimentos e novas técnicas para o desenvolvimento front-end.
+			O Front7 é um evento que nasceu dos desenvolvedores do <a href='http://www.elo7.com.br' title='Elo7 | Produtos fora de série' class='elo7' itemprop='url'><span itemprop='name'>Elo7</span></a> com o intuito de propagar conhecimentos e novas técnicas para o desenvolvimento front-end.
 		</p>
 	</section>
-	<section class='secao' id='local'>
+	<section class='secao' id='local' itemprop='location' itemscope itemtype='http://schema.org/Place'>
+		<meta itemprop='name' content='Elo7'>
 		<div class='container'>
 			<h2 class='titulo'>Local</h2>
-			<address class='endereco'>
-				<p class='descricao'>Rua Beira Rio, 57, 1o. andar</p>
-				<p class='descricao'>Vila Olímpia - São Paulo - SP - CEP: 04548-050</p>
+			<address class='endereco' itemprop='address' itemscope itemtype='http://schema.org/PostalAddress'>
+				<p class='descricao' itemprop='streetAddress'>Rua Beira Rio, 57, 1o. andar</p>
+				<p class='descricao'>Vila Olímpia - <span itemprop='addressLocality'>São Paulo</span> - <span itemprop='addressRegion'>SP</span> - CEP: <span itemprop='postalCode'>04548-050</span></p>
 			</address>
 			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.2722794069064!2d-46.69305858451137!3d-23.59456608466641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57386891fef7%3A0xa560366583229e24!2sR.+Beira+Rio%2C+57+-+Centro%2C+S%C3%A3o+Paulo+-+SP%2C+04548-050!5e0!3m2!1spt-BR!2sbr!4v1455552052484" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen></iframe>
 		</div>
@@ -43,19 +52,29 @@
 	<section class='secao container' id='agenda'>
 		<h2 class='titulo'>Agenda</h2>
 		<ol>
-			<li class='atividade'>
-				<h3 class='tema'>Jogos: indo além do simples CSS! (<time class='horario'>18h30</time>)</h3>
-				<p class='resumo'>
+			<li class='atividade' itemprop='subEvent' itemscope itemtype='http://schema.org/Event'>
+				<h3 class='tema' itemprop='name'>Jogos: indo além do simples CSS! (<time class='horario'>18h30</time>)</h3>
+				<meta itemprop='startDate' content='2016-03-07T18:30'>
+				<p class='resumo' itemprop='description'>
 					Há quem pense que o CSS serve somente para aplicar estilos a determinados elementos, e realmente seu principal objetivo é esse! Mas alguém já pensou que seria possível capturar eventos, como um evento de clique por exemplo, e gerar algum tipo de animação com isso? E falar que com isso é possível criar um jogo? Neste talk explicarei como criar um jogo simples, sem uma linha de javascript, usando apenas HTML e CSS. Além de muitas de suas funcionalidades: pseudo-elementos, pseudo-classes, animations, entre outras.
 				</p>
+				<address itemprop='location' itemscope itemtype='http://schema.org/Place'>
+					<meta itemprop='name' content='Auditório'>
+					<meta itemprop='address' content='1 andar'>
+				</address>
 			</li>
 			<li class='atividade'>
 				<h3 class='tema'>Coffee-break (<time class='horario'>19h30</time>)</h3>
 				<p class='resumo'>Comidaaaa!</p>
 			</li>
-			<li class='atividade'>
-				<h3 class='tema'>Progressive web apps (<time class='horario'>19h45</time>)</h3>
-				<p class='resumo'>Descrição</p>
+			<li class='atividade' itemprop='subEvent' itemscope itemtype='http://schema.org/Event'>
+				<h3 class='tema' itemprop='name'>Progressive web apps (<time class='horario'>19h45</time>)</h3>
+				<meta itemprop='startDate' content='2016-03-07T19:45'>
+				<p class='resumo' itemprop='description'>Descrição</p>
+				<address itemprop='location' itemscope itemtype='http://schema.org/Place'>
+					<meta itemprop='name' content='Auditório'>
+					<meta itemprop='address' content='1 andar'>
+				</address>
 			</li>
 		</ol>
 	</section>
@@ -63,21 +82,21 @@
 		<div class='secao container'>
 			<h2 class='titulo'>Palestrantes</h2>
 			<ol>
-				<li class='palestrante'>
-					<img src='palestrantes/fernanda.jpg' alt='Fernanda Bernardo' class='avatar'>
-					<h3 class='nome'>
-						<a href='https://github.com/FernandaBernardo' title='Github Fernanda Bernardo'>Fernanda Bernardo</a>
+				<li class='palestrante' itemprop='performer' itemscope itemtype='http://schema.org/Person'>
+					<img src='palestrantes/fernanda.jpg' alt='Fernanda Bernardo' class='avatar' itemprop='image'>
+					<h3 class='nome' itemprop='name'>
+						<a href='https://github.com/FernandaBernardo' title='Github Fernanda Bernardo' itemprop='url'>Fernanda Bernardo</a>
 					</h3>
-					<p class='descricao'>
+					<p class='descricao' itemprop='description'>
 						Tenho 21 anos e me formei em Sistemas de Informação na USP Leste. Cai na área de tecnologia meio que por sorte e acabei me apaixonando. Gosto tanto de back end quanto de front end e também de assuntos relacionados a UX. Adoro palestrar e estudar assuntos novos. Gosto de assuntos relacionados à saúde, sou diabética e tenho um blog relacionado ao assunto. Apesar disso, adoro doces.
 					</p>
 				</li>
-				<li class='palestrante'>
-					<img src='' alt='Sérgio Lopes' class='avatar'>
-					<h3 class='nome'>
-						<a href='https://github.com/sergiolopes' title='Github Sérgio Lopes'>Sérgio Lopes</a>
+				<li class='palestrante' itemprop='performer' itemscope itemtype='http://schema.org/Person'>
+					<img src='' alt='Sérgio Lopes' class='avatar' itemprop='image'>
+					<h3 class='nome' itemprop='name'>
+						<a href='https://github.com/sergiolopes' title='Github Sérgio Lopes' itemprop='url'>Sérgio Lopes</a>
 					</h3>
-					<p class='descricao'>
+					<p class='descricao' itemprop='description'>
 					</p>
 				</li>
 			</ol>
