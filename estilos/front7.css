@@ -69,6 +69,7 @@ body {
 	padding-top: 1.5em;
 	position: relative;
 	text-shadow: 1px 1px 1px #333333;
+	text-transform: uppercase;
 }
 
 .texto-chamada {
@@ -76,8 +77,12 @@ body {
 	font-size: 0.5em;
 }
 
-.horario {
+.dia {
 	margin-top: 0.75em;
+}
+
+.horario {
+	text-transform: lowercase;
 }
 
 .local {
@@ -102,7 +107,7 @@ body {
 }
 
 .inscricao:hover {
-	background-color: #359c9c;
+	background-color: rgba(53,156,156, 0.8);
 }
 
 .licenca {
@@ -130,6 +135,10 @@ body {
 	line-height: 1.5;
 }
 
+.elo7 {
+	color: #fdb933;
+}
+
 #local, #palestrantes {
 	background-color: #f8f8f8;
 }
@@ -154,6 +163,7 @@ body {
 
 .resumo {
 	font-size: 0.9em;
+	line-height: 1.5;
 }
 
 .palestrante {
