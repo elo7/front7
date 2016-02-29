@@ -1,6 +1,107 @@
+@font-face {
+	font-family:museo_sans;
+	src:url(//images.elo7.com.br/assets/v3/fonts/museo-sans-300-webfont.eot);
+	src:url(//images.elo7.com.br/assets/v3/fonts/museo-sans-300-webfont.eot?#iefix) format("embedded-opentype"),
+		url(//images.elo7.com.br/assets/v3/fonts/museo-sans-300-webfont.woff2) format("woff2"),
+		url(//images.elo7.com.br/assets/v3/fonts/museo-sans-300-webfont.woff) format("woff"),
+		url(//images.elo7.com.br/assets/v3/fonts/museo-sans-300-webfont.ttf) format("truetype"),
+		url(//images.elo7.com.br/assets/v3/fonts/museo-sans-300-webfont.svg#museo_sans300) format("svg");
+	font-weight:300;
+	font-style:normal
+}
+
+@font-face{
+	font-family:museo_sans;
+	src:url(//images.elo7.com.br/assets/v3/fonts/museo-sans-500-webfont.eot);
+	src:url(//images.elo7.com.br/assets/v3/fonts/museo-sans-500-webfont.eot?#iefix) format("embedded-opentype"),
+		url(//images.elo7.com.br/assets/v3/fonts/museo-sans-500-webfont.woff2) format("woff2"),
+		url(//images.elo7.com.br/assets/v3/fonts/museo-sans-500-webfont.woff) format("woff"),
+		url(//images.elo7.com.br/assets/v3/fonts/museo-sans-500-webfont.ttf) format("truetype"),
+		url(//images.elo7.com.br/assets/v3/fonts/museo-sans-500-webfont.svg#museo_sans500) format("svg");
+	font-weight:500;
+	font-style:normal
+}
+
+* {
+	color: inherit;
+	box-sizing: border-box;
+	font-family: "museo_sans", sans-serif;
+	font-style: normal;
+	font-weight: inherit;
+	text-decoration: none;
+}
+
+body {
+	font-weight: 300;
+}
+
+.menu {
+	background-color: #333333;
+	color: #F7F4F0;
+	padding-bottom: 0.75em;
+	padding-top: 0.75em;
+}
+
+.section-link {
+	display: inline-block;
+	margin-right: 1.5em;
+	text-shadow: 1px 1px 2px #524947;
+}
+
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
+}
+
+.chamada {
+	background-image: url('../imgs/cover.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% auto;
+	color: #F7F4F0;
+	font-size: 5em;
+	font-weight: 500;
+	text-align: center;
+	padding-bottom: 1.5em;
+	padding-top: 1.5em;
+	position: relative;
+	text-shadow: 1px 1px 1px #333333;
+	text-transform: uppercase;
+}
+
+.texto-chamada {
+	display: inline-block;
+	font-size: 0.5em;
+	margin-top: 0.5em;
+}
+
+.inscricao {
+	border: 2px solid white;
+	border-radius: 5em;
+	color: #F7F4F0;
+	display: block;
+	font-size: 0.5em;
+	font-weight: 300;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2.5em;
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+	text-transform: none;
+	width: 10em;
+}
+
+.inscricao:hover {
+	background-color: #359c9c;
+}
+
+.licenca {
+	position: absolute;
+	font-size: 0.2em;
+	font-weight: 300;
+	bottom: 1em;
+	right: 1em;
+	text-transform: none;
 }
 
 .section {
