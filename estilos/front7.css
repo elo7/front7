@@ -106,10 +106,11 @@ body {
 }
 
 .licenca {
-	position: absolute;
-	font-size: 0.2em;
-	font-weight: 300;
 	bottom: 1em;
+	color: #c1c1c1;
+	font-size: 0.15em;
+	font-weight: 300;
+	position: absolute;
 	right: 1em;
 	text-transform: none;
 }
