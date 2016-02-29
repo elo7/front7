@@ -37,7 +37,7 @@ body {
 	font-weight: 300;
 }
 
-.menu {
+.menu, .rodape {
 	background-color: #333333;
 	color: #F7F4F0;
 	font-size: 0.8em;
@@ -129,12 +129,30 @@ body {
 	line-height: 1.5;
 }
 
-#local {
+#local, #palestrantes {
 	background-color: #f8f8f8;
 }
 
 .endereco {
 	margin-bottom: 0.5em;
+}
+
+#agenda .descricao {
+	margin-bottom: 0.5em;
+}
+
+.atividade {
+	margin-top: 1.5em;
+}
+
+.tema {
+	color: #359c9c;
+	font-weight: 500;
+	margin-bottom: 0.25em;
+}
+
+.resumo {
+	font-size: 0.9em;
 }
 
 .palestrante {
