@@ -32,6 +32,7 @@
 }
 
 body {
+	color: #7d7873;
 	font-weight: 300;
 }
 
@@ -42,14 +43,14 @@ body {
 	padding-top: 0.75em;
 }
 
-.section-link {
+.secao-link {
 	display: inline-block;
 	margin-right: 1.5em;
 	text-shadow: 1px 1px 2px #524947;
 }
 
 .container {
-	max-width: 1200px;
+	max-width: 1080px;
 	margin: 0 auto;
 }
 
@@ -104,7 +105,34 @@ body {
 	text-transform: none;
 }
 
-.section {
-	padding-bottom: 1em;
-	padding-top: 1em;
+.secao {
+	padding-bottom: 2.5em;
+	padding-top: 2.5em;
+}
+
+.titulo {
+	color: #333333;
+	font-size: 2em;
+	margin-bottom: 0.5em;
+}
+
+.descricao {
+	line-height: 1.5;
+}
+
+#local {
+	background-color: #f8f8f8;
+}
+
+.palestrante {
+	clear: left;
+	margin-bottom: 1em;
+	overflow: hidden;
+}
+
+.avatar {
+	border-radius: 100%;
+	float: left;
+	height: 120px;
+	width: 120px;
 }
