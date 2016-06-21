@@ -40,14 +40,19 @@ body {
 .menu, .rodape {
 	background-color: #333333;
 	color: #F7F4F0;
-	font-size: 1em;
+	font-size: 0.75em;
 	padding-bottom: 1em;
 	padding-top: 1em;
 }
 
+.secao-links {
+	display: flex;
+	justify-content: space-between;
+	max-width: 360px;
+	width: 100%;
+}
+
 .secao-link {
-	display: inline-block;
-	margin-right: 1.5em;
 	text-shadow: 1px 1px 2px #524947;
 }
 
@@ -59,12 +64,12 @@ body {
 }
 
 .chamada {
-	background-image: url('../imgs/cover.jpg');
+	background-image: url('../imagens/cover.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 100% auto;
+	background-size: cover;
 	color: #F7F4F0;
-	font-size: 4.5em;
+	font-size: 2em;
 	font-weight: 500;
 	text-align: center;
 	padding-bottom: 0.75em;
@@ -74,20 +79,13 @@ body {
 	text-transform: uppercase;
 }
 
-@media (min-width: 1100px)  {
-	.chamada {
-		padding-bottom: 1.5em;
-		padding-top: 1.5em;
-	}
-}
-
 .texto-chamada {
 	display: block;
-	font-size: 0.5em;
+	font-size: 0.6em;
 }
 
 .dia {
-	margin-top: 0.75em;
+	margin-top: 1em;
 }
 
 .horario {
@@ -95,7 +93,7 @@ body {
 }
 
 .local {
-	font-size: 0.3em;
+	font-size: 0.5em;
 	margin-top: 0.5em;
 }
 
@@ -130,13 +128,13 @@ body {
 }
 
 .secao {
-	padding-bottom: 2.5em;
-	padding-top: 2.5em;
+	padding-top: 1em;
+	padding-bottom: 1em;
 }
 
 .titulo {
 	color: #333333;
-	font-size: 2em;
+	font-size: 1.5em;
 	margin-bottom: 0.5em;
 }
 
@@ -148,12 +146,20 @@ body {
 	color: #fdb933;
 }
 
-#local, #palestrantes {
+#agenda, #local {
 	background-color: #f8f8f8;
 }
 
 .endereco {
 	margin-bottom: 0.5em;
+}
+
+.mapa iframe {
+    pointer-events: none
+}
+
+.mapa.selecionado iframe {
+    pointer-events: auto
 }
 
 #agenda .descricao {
@@ -166,7 +172,6 @@ body {
 
 .tema {
 	color: #359c9c;
-	font-weight: 500;
 	margin-bottom: 0.25em;
 }
 
