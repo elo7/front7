@@ -38,5 +38,15 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-	event.respondWith(caches.match(event.request));
+	if(event.request.url.indexOf(self.location.origin) != -1) {
+		event.respondWith(caches.match(event.request));
+	}
+});
+
+self.addEventListener('push', function(event) {
+	console.log(event);
+});
+
+self.addEventListener('sync', function(event) {
+	console.log(event);
 });
