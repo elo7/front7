@@ -22,4 +22,17 @@
 				console.log('Registration failed with ' + error);
 			});
 	}
+
+	window.addEventListener('load', function() {
+		window.addEventListener('online',  function() {
+			document.querySelector('.mapa').classList.remove('hide');
+			document.querySelector('.inscricao').classList.remove('hide');
+			document.querySelector('.offline-message').classList.add('hide');
+		});
+		window.addEventListener('offline', function() {
+			document.querySelector('.mapa').classList.add('hide');
+			document.querySelector('.inscricao').classList.add('hide');
+			document.querySelector('.offline-message').classList.remove('hide');
+		});
+	});
 })();

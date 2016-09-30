@@ -150,8 +150,8 @@ body {
 	background-color: #f8f8f8;
 }
 
-.endereco {
-	margin-bottom: 0.5em;
+.mapa {
+	margin-top: 0.5em;
 }
 
 .mapa iframe {
@@ -209,4 +209,18 @@ body {
 
 .palestrante .descricao {
 	font-size: 0.9em;
+}
+
+.offline-message {
+	background-color: #000;
+	color: #fff;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	padding: 0.6em;
+}
+
+.hide {
+	display: none;
 }
