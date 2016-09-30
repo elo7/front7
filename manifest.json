@@ -5,7 +5,7 @@
   "background_color": "#fdb933",
   "display": "standalone",
   "orientation": "portrait",
-  "start_url": "/?utm_source=web_app_manifest",
+  "start_url": "/front7/",
   "icons": [
     {
       "src": "imagens/favicons/favicon-72x72.png",
