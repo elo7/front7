@@ -1,11 +1,11 @@
 {
-  "name": "Front7",
+  "name": "O Front7",
   "short_name": "Front7",
   "theme_color": "#fdb933",
   "background_color": "#fdb933",
   "display": "standalone",
   "orientation": "portrait",
-  "start_url": "/front7/",
+  "start_url": "index.html",
   "icons": [
     {
       "src": "imagens/favicons/favicon-72x72.png",
