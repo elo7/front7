@@ -1,4 +1,4 @@
-var CACHE_NAME = '0.1';
+var CACHE_NAME = '0.2';
 var CACHE_URLS = [
 	'/front7/',
 	'/front7/js/home.js',
@@ -31,9 +31,17 @@ var CACHE_URLS = [
 
 self.addEventListener('install', function(event) {
 	event.waitUntil(
-		caches.open(CACHE_NAME).then(function(cache) {
-			return cache.addAll(CACHE_URLS);
-		})
+		caches
+			.keys()
+			.then(versions => {
+				versions
+					.filter(version => version != CACHE_NAME)
+					.forEach(version => caches.delete(version));
+			}).then(() => {
+				caches.open(CACHE_NAME).then(cache => {
+					return cache.addAll(CACHE_URLS);
+				});
+			})
 	);
 });
 
