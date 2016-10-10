@@ -1,0 +1,10 @@
+{
+	"title": "Front7",
+	"description": "O Front7 é um evento que nasceu dos desenvolvedores do Elo7 com o intuito de propagar conhecimentos e novas técnicas para o desenvolvimento front-end.",
+	"keywords": "Front7, front-end, HTML, CSS, JS, Elo7",
+	"url": "https://elo7.github.io/front7/",
+	"amp-url": "https://elo7.github.io/front7?amp=true",
+	"og:image": "https://elo7.github.io/front7/imagens/cover.jpg",
+	"event-speakers": "Erika Takahara e Tiago Vasconcelos",
+	"event-subject": "Progressive web apps - PWA"
+}
