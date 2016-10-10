@@ -22,15 +22,6 @@
 	font-style:normal
 }
 
-* {
-	color: inherit;
-	box-sizing: border-box;
-	font-family: "museo_sans", sans-serif;
-	font-style: normal;
-	font-weight: inherit;
-	text-decoration: none;
-}
-
 body {
 	color: #7d7873;
 	font-size: 1.25em;
