@@ -1,4 +1,4 @@
-var CACHE_NAME = '0.3';
+var CACHE_NAME = '0.4';
 var CACHE_URLS = [
 	'index.html',
 	'js/home.js',
@@ -6,6 +6,7 @@ var CACHE_URLS = [
 	'estilos/reset.css',
 	'imagens/cover.jpg',
 	'palestrantes/aline.jpg',
+	'palestrantes/erika.jpg',
 	'palestrantes/fernanda.jpg',
 	'palestrantes/luiz.jpg',
 	'palestrantes/sergio.jpg',
