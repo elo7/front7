@@ -45,3 +45,13 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+* {
+	color: inherit;
+	box-sizing: border-box;
+	font-family: "museo_sans", sans-serif;
+	font-style: normal;
+	font-weight: inherit;
+	text-decoration: none;
+}
+
