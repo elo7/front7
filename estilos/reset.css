@@ -21,6 +21,12 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	vertical-align: baseline;
+	color: inherit;
+	box-sizing: border-box;
+	font-family: "museo_sans", sans-serif;
+	font-style: normal;
+	font-weight: inherit;
+	text-decoration: none;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -45,13 +51,3 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-* {
-	color: inherit;
-	box-sizing: border-box;
-	font-family: "museo_sans", sans-serif;
-	font-style: normal;
-	font-weight: inherit;
-	text-decoration: none;
-}
-
