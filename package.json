@@ -1,0 +1,42 @@
+{
+  "name": "front7",
+  "version": "1.0.0",
+  "description": "Front7",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "node-sass  assets/sass/ -r --include-path assets/sass/ --output-style compressed --source-map true -o assets/css",
+    "build": "npm run build:css",
+    "watch:css": "nodemon -e scss --exec 'npm run build:css'",
+    "start-dev": "nodemon --watch app.js --ignore 'assets/' 'templates/' --exec 'node app.js'",
+    "dev": "npm run build",
+    "postdev": "parallelshell 'npm run watch:css'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elo7/front7.git"
+  },
+  "keywords": [
+    "front7",
+    "elo7",
+    "evento",
+    "front-end"
+  ],
+  "author": "Elo7",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elo7/front7/issues"
+  },
+  "homepage": "https://github.com/elo7/front7#readme",
+  "dependencies": {
+    "compression": "1.6.2",
+    "express": "4.14.0",
+    "express-handlebars": "3.0.0",
+    "handlebars-helpers": "0.7.5"
+  },
+  "devDependencies": {
+    "node-sass": "3.11.2",
+    "nodemon": "1.11.0",
+    "parallelshell": "2.0.0"
+  }
+}

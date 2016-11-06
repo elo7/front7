@@ -1,3 +1,5 @@
+@import "reset";
+
 @font-face {
 	font-family:museo_sans;
 	src:url(//images.elo7.com.br/assets/v3/fonts/museo-sans-300-webfont.eot);
@@ -31,10 +33,26 @@
 	text-decoration: none;
 }
 
+html, body {
+	height: 100%;
+}
+
 body {
 	color: #7d7873;
 	font-size: 1.25em;
 	font-weight: 300;
+}
+
+#wrapper {
+	min-height: 100%;
+	position: relative;
+	padding-bottom: 45px;
+}
+
+footer {
+	bottom: 0;
+	position: absolute;
+	width: 100%
 }
 
 .menu, .rodape {
@@ -64,7 +82,7 @@ body {
 }
 
 .chamada {
-	background-image: url('../imagens/cover.jpg');
+	background-image: url('../images/cover.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -223,4 +241,8 @@ body {
 
 .hide {
 	display: none;
+}
+
+.links {
+	float: right;
 }
