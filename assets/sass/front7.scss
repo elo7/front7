@@ -55,12 +55,57 @@ footer {
 	width: 100%
 }
 
-.menu, .rodape {
+body {
+	color: #7d7873;
+	font-size: 1.25em;
+	font-weight: 300;
+}
+
+.menu-principal {
 	background-color: #333333;
-	color: #F7F4F0;
-	font-size: 0.75em;
-	padding-bottom: 1em;
-	padding-top: 1em;
+	height: 100vh;
+	left: 0;
+	position: fixed;
+	top: 0;
+	transform: translateX(-100vw);
+	transition: transform 1s;
+	width: 60%;
+	will-change: transform;
+	z-index: 15;
+
+	.secao-link {
+		display: block;
+		padding: 1em;
+	}
+}
+
+
+#menu-principal-trigger {
+	display: none;
+
+	&:checked ~ .menu {
+		.menu-principal {
+			transform: translateX(0);
+		}
+
+		.menu-principal-close {
+			width: 100vw;
+			height: 100vh;
+			background-color: rgba(0, 0, 0, 0.4);
+			opacity: 1;
+			z-index: 10;
+		}
+	}
+}
+
+.menu-principal-close {
+	position: absolute;
+	left: 0;
+	text-indent: -9999px;
+	opacity: 0;
+	top: 0;
+	transition: opacity 1s;
+	will-change: opacity;
 }
 
 .secao-links {
@@ -74,6 +119,14 @@ footer {
 	text-shadow: 1px 1px 2px #524947;
 }
 
+.menu, .rodape {
+	background-color: #333333;
+	color: #F7F4F0;
+	font-size: 0.75em;
+	padding-bottom: 1em;
+	padding-top: 1em;
+}
+
 .container {
 	max-width: 1080px;
 	margin: 0 auto;
@@ -82,7 +135,7 @@ footer {
 }
 
 .chamada {
-	background-image: url('../images/cover.jpg');
+	background-image: url('/assets/images/cover.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -243,6 +296,95 @@ footer {
 	display: none;
 }
 
-.links {
-	float: right;
+.eventos {
+	.evento {
+		overflow: auto;
+		padding-bottom: 2rem;
+		margin-bottom: 2rem;
+		border-bottom: 1px solid #dedede;
+
+		&:last-child {
+			border-bottom: 0;
+			margin-bottom: 0;
+		}
+
+		.imagem {
+			float: left;
+			margin-right: 1rem;
+		}
+	}
+
+	.subtitulo {
+		color: #333;
+		margin-bottom: 0.5rem;
+	}
+
+	.descricao {
+		font-size: 1rem;
+	}
+
+	.palestras {
+		overflow: auto;
+		margin-bottom: 1rem;
+	}
+
+	.palestrantes {
+		clear: both;
+		display: flex;
+		margin-top: 1rem;
+
+		li {
+			display: flex;
+			flex: 1;
+			padding-right: 1em;
+			align-items: center;
+		}
+
+		h4 {
+			font-size: 1rem;
+		}
+
+		img {
+			border-radius: 50%;
+			margin-right: 0.5rem;
+		}
+	}
+}
+
+@media (min-width: 600px) {
+
+	.menu-principal-label {
+		display: none;
+	}
+
+	.secao-links, .menu-principal {
+		width: auto;
+	}
+
+	.menu-principal {
+		display: flex;
+		transform: none;
+		background-color: transparent;
+		position: static;
+		width: auto;
+		height: auto;
+	}
+
+	.cabecalho {
+		display: flex;
+	}
+
+	.secao-links .secao-link {
+		padding-right: 1em;
+	}
+
+	.secao-links .secao-link:first-child {
+		display: none;
+	}
+
+	.menu-principal .secao-link {
+		display: flex;
+		padding: 0 1em 0 0;
+	}
+
 }

@@ -3,7 +3,7 @@ let express = require('express'),
   fs = require('fs');
 
 let loadSpeakers = (() => {
-  let list = JSON.parse(fs.readFileSync('speakers.json', 'utf8')),
+  let list = JSON.parse(fs.readFileSync('data/speakers.json', 'utf8')),
     speakers = list.speakers,
     currentSpeakers = [];
 
@@ -20,8 +20,12 @@ router.get(['/', 'index.html'], (req, res) => {
 	res.render('index', {speakers: loadSpeakers.getCurrentSpeakers});
 });
 
-router.get('/speaker/:link', (req, res) => {
+router.get('/palestrante/:link', (req, res) => {
   res.render('speaker', {speaker: loadSpeakers.getSpeakerByName(req.params.link)});
+});
+
+router.get('/eventos', (req, res) => {
+  res.render('events');
 });
 
 module.exports = router;

@@ -1,0 +1,17 @@
+<div class='palestrante' itemprop='performer' itemscope itemtype='http://schema.org/Person'>
+	<img src='{{avatar}}' alt='{{name}}' class='avatar' itemprop='image'>
+	<h3 class='nome' itemprop='name'>
+		<a href='/palestrante/{{link}}' title='{{name}}' itemprop='url'>{{name}}</a>
+	</h3>
+	<p class='descricao' itemprop='description'>
+		{{description}}
+	</p>
+	<div class="links">
+		<a href='https://twitter.com/{{twitter}}' target='_blank' title='@{{twitter}}'>
+			<img src='/assets/images/twitter.png' alt='@{{twitter}}'>
+		</a>
+		<a href='{{github}}' target='_blank' title='Github: {{name}}'>
+			<img src='/assets/images/github.png' alt='{{name}}'>
+		</a>
+	</div>
+</div>

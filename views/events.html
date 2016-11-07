@@ -52,15 +52,25 @@
 </head>
 <body itemscope itemtype='http://schema.org/Event'>
 	<div id="wrapper">
+		<input id='menu-principal-trigger' type='checkbox'>
 		<header class='menu'>
 			<nav class='cabecalho container'>
 				<ul class='secao-links'>
+					<li class='secao-link'>
+						<label class='menu-principal-label' for='menu-principal-trigger'>Menu</label>
+					</li>
 					<li class='secao-link'><a href='#evento'>O evento</a></li>
 					<li class='secao-link'><a href='#agenda'>Agenda</a></li>
 					<li class='secao-link'><a href='#palestrantes'>Palestrantes</a></li>
 					<li class='secao-link'><a href='#local'>Local</a></li>
 				</ul>
+				<ul class='menu-principal'>
+					<li class='secao-link'><a href='#evento'>Antigos eventos</a></li>
+					<li class='secao-link'><a href='#agenda'>Antigos palestrantes</a></li>
+					<li class='secao-link'><a href='#agenda'>Quero palestrar</a></li>
+				</ul>
 			</nav>
+			<label class='menu-principal-close' for='menu-principal-trigger'>Fechar</label>
 		</header>
 		<section class='chamada'>
 			<h1 itemprop='name'>Front7</h1>
@@ -69,86 +79,47 @@
 			<address class='texto-chamada local'>Elo7 - São Paulo</address>
 			<a title='By Marcosleal (Own work) [CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0) or GFDL (http://www.gnu.org/copyleft/fdl.html)], via Wikimedia Commons' href='https://commons.wikimedia.org/wiki/File%3APonte_estaiada_Octavio_Frias_-_Sao_Paulo.jpg' class='licenca'>By Marcosleal (Own work)</a>
 		</section>
-		<section class='secao container' id='evento' itemprop='Organizer' itemscope itemtype='http://schema.org/Organization'>
-			<h2 class='titulo'>O evento</h2>
-			<p class='descricao'>
-				O Front7 é um evento que nasceu dos desenvolvedores do <a href='http://www.elo7.com.br' title='Elo7 | Produtos fora de série' class='elo7' itemprop='url'><span itemprop='name'>Elo7</span></a> com o intuito de propagar conhecimentos e novas técnicas para o desenvolvimento front-end.
-			</p>
-		</section>
-		<section class='secao container' id='agenda'>
-			<h2 class='titulo'>Agenda</h2>
-			<ol>
-				<li class='atividade'>
-					<h3 class='tema'>Abertura (<time datetime='2016-12-05 18:30'  class='horario'>18h30</time>)</h3>
-					<p class='resumo'>Recepção</p>
+		<section class='secao container'>
+			<h2 class='titulo'>Eventos</h2>
+			<ol class='eventos'>
+				<li class='evento'>
+					<section class='palestras'>
+						<h3 class='subtitulo'>Chrome dev tools</h3>
+						<img class='imagem' src='/assets/images/events/devtools.jpg' width='70' height='70'>
+						<p class='descricao'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis imperdiet nunc, ut vestibulum sem. Vestibulum ante diam, convallis a sagittis ut.</p>
+					</section>
+					<section class='detalhes'>
+						<h3 class='subtitulo'>Palestrantes</h3>
+						<ul class='palestrantes'>
+							<li>
+								<img src='/assets/images/speakers/tiago.jpg' width='40' height='40'>
+								<h4>Tiago Vasconcelos</h4>
+							</li>
+							<li>
+								<img src='/assets/images/speakers/aline.jpg' width='40' height='40'>
+								<h4>Aline Lee Nogueira</h4>
+							</li>
+						</ul>
+					</section>
 				</li>
-				<li class='atividade' itemprop='subEvent' itemscope itemtype='http://schema.org/Event'>
-					<h3 class='tema' itemprop='name'>Progressive web apps - parte 1 (<time datetime='2016-12-05 18:45' class='horario'>18h45</time>)</h3>
-					<meta itemprop='startDate' content='2016-12-05T18:45'>
-					<p class='resumo' itemprop='description'>
-						A definir
-					</p>
-					<address itemprop='location' itemscope itemtype='http://schema.org/Place'>
-						<meta itemprop='name' content='Auditório'>
-						<meta itemprop='address' content='1 andar'>
-					</address>
-				</li>
-				<li class='atividade'>
-					<h3 class='tema'>Coffee-break (<time datetime='2016-12-05 19:30' class='horario'>19h30</time>)</h3>
-					<p class='resumo'>Comidaaaa!</p>
-				</li>
-				<li class='atividade' itemprop='subEvent' itemscope itemtype='http://schema.org/Event'>
-					<h3 class='tema' itemprop='name'>Progressive web apps - parte 2 (<time datetime='2016-12-05 19:45' class='horario'>19h45</time>)</h3>
-					<meta itemprop='startDate' content='2016-12-05T19:45'>
-					<p class='resumo' itemprop='description'>
-						A definir
-					</p>
-					<address itemprop='location' itemscope itemtype='http://schema.org/Place'>
-						<meta itemprop='name' content='Auditório'>
-						<meta itemprop='address' content='1 andar'>
-					</address>
+
+				<li class='evento'>
+					<section class='palestras'>
+						<h3 class='subtitulo'>Web components</h3>
+						<img class='imagem' src='/assets/images/events/webcomponents.png' width='70' height='70'>
+						<p class='descricao'>Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis imperdiet nunc, ut vestibulum sem. Vestibulum ante diam, convallis a sagittis ut</p>
+					</section>
+					<section class='detalhes'>
+						<h3 class='subtitulo'>Palestrante</h3>
+						<ul class='palestrantes'>
+							<li>
+								<img src='/assets/images/speakers/luiz.jpg' width='40' height='40'>
+								<h4>Luiz Corte Real</h4>
+							</li>
+						</ul>
+					</section>
 				</li>
 			</ol>
-		</section>
-		<section id='palestrantes'>
-			<div class='secao container'>
-				<h2 class='titulo'>Palestrantes</h2>
-				<ol>
-					{{#forEach speakers}}
-						<li class='palestrante' itemprop='performer' itemscope itemtype='http://schema.org/Person'>
-							<img src='{{avatar}}' alt='{{name}}' class='avatar' itemprop='image'>
-							<h3 class='nome' itemprop='name'>
-								<a href='/speaker/{{link}}' title='{{name}}' itemprop='url'>{{name}}</a>
-							</h3>
-							<p class='descricao' itemprop='description'>
-								{{description}}
-							</p>
-							<div class="links">
-								<a href='https://twitter.com/{{twitter}}' target='_blank' title='@{{twitter}}'>
-									<img src='/assets/images/twitter.png' alt='@{{twitter}}'>
-								</a>
-								<a href='{{github}}' target='_blank' title='Github: {{name}}'>
-									<img src='/assets/images/github.png' alt='{{name}}'>
-								</a>
-							</div>
-						</li>
-					{{/forEach}}
-				</ol>
-			</div>
-		</section>
-		<section class='secao' id='local' itemprop='location' itemscope itemtype='http://schema.org/Place'>
-			<meta itemprop='name' content='Elo7'>
-			<div class='container'>
-				<h2 class='titulo'>Local</h2>
-				<address class='endereco' itemprop='address' itemscope itemtype='http://schema.org/PostalAddress'>
-					<p class='descricao' itemprop='streetAddress'>Rua Beira Rio, 57, 1o. andar</p>
-					<p class='descricao'>Vila Olímpia - <span itemprop='addressLocality'>São Paulo</span> - <span itemprop='addressRegion'>SP</span> - CEP: <span itemprop='postalCode'>04548-050</span></p>
-				</address>
-				<div class='mapa'>
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.2722794069064!2d-46.69305858451137!3d-23.59456608466641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57386891fef7%3A0xa560366583229e24!2sR.+Beira+Rio%2C+57+-+Centro%2C+S%C3%A3o+Paulo+-+SP%2C+04548-050!5e0!3m2!1spt-BR!2sbr!4v1455552052484" width="100%" height="350"
-					frameborder="0" style="border:0;" allowfullscreen></iframe>
-				</div>
-			</div>
 		</section>
 		<section class='offline-message hide'>
 			Você está offline.

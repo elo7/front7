@@ -10,16 +10,17 @@ const ASSETS_PATH = 'assets';
 app.use('/' + ASSETS_PATH, express.static(ASSETS_PATH));
 app.use("/manifest.json", express.static(ASSETS_PATH + '/manifest.json'));
 app.use("/sw.js", express.static(ASSETS_PATH + '/js/sw.js'));
+app.use('/views', express.static('views'));
+app.use('/data', express.static('data'));
 
-handlebars.create({helpers: handlebarsHelpers()});
-app.engine('html', handlebars());
+app.engine('html', handlebars.create({helpers: handlebarsHelpers(), extname: 'html'}).engine);
 app.set('view engine', 'html');
-app.set('views', __dirname + '/templates');
 
 let homeController = require('./controllers/home');
 
-app.get(['/', '/index.html'], homeController);
-app.get('/speaker/:name', homeController);
+app.get('/', homeController);
+app.get('/palestrante/:link', homeController);
+app.get('/eventos', homeController);
 
 let listener = app.listen(process.env.PORT || 3000, () => {
   console.log('Up at port', listener.address().port);
