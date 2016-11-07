@@ -37,12 +37,48 @@ body {
 	font-weight: 300;
 }
 
-.menu, .rodape {
+.menu-principal {
 	background-color: #333333;
-	color: #F7F4F0;
-	font-size: 0.75em;
-	padding-bottom: 1em;
-	padding-top: 1em;
+	height: 100vh;
+	left: 0;
+	position: fixed;
+	top: 0;
+	transform: translateX(-100vw);
+	transition: transform 1s;
+	width: 60%;
+	will-change: transform;
+	z-index: 15;
+}
+
+.menu-principal .secao-link {
+	display: block;
+	padding: 1em;
+}
+
+#menu-principal-trigger {
+	display: none;
+}
+
+#menu-principal-trigger:checked ~ .menu .menu-principal {
+	transform: translateX(0);
+}
+
+.menu-principal-close {
+	position: absolute;
+	left: 0;
+	text-indent: -9999px;
+	opacity: 0;
+	top: 0;
+	transition: opacity 1s;
+	will-change: opacity;
+}
+
+#menu-principal-trigger:checked ~ .menu .menu-principal-close {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.4);
+	opacity: 1;
+	z-index: 10;
 }
 
 .secao-links {
@@ -50,6 +86,14 @@ body {
 	justify-content: space-between;
 	max-width: 360px;
 	width: 100%;
+}
+
+.menu, .rodape {
+	background-color: #333333;
+	color: #F7F4F0;
+	font-size: 0.75em;
+	padding-bottom: 1em;
+	padding-top: 1em;
 }
 
 .secao-link {
@@ -224,3 +268,95 @@ body {
 .hide {
 	display: none;
 }
+
+.eventos .evento {
+	overflow: auto;
+	padding-bottom: 2rem;
+	margin-bottom: 2rem;
+	border-bottom: 1px solid #dedede;
+}
+
+.eventos .evento:last-child {
+	border-bottom: 0;
+	margin-bottom: 0;
+}
+
+.eventos .evento .imagem {
+	float: left;
+	margin-right: 1rem;
+}
+
+.eventos .subtitulo {
+	color: #333;
+	margin-bottom: 0.5rem;
+}
+
+.eventos .descricao {
+	font-size: 1rem;	
+}
+
+.eventos .palestras {
+	overflow: auto;
+	margin-bottom: 1rem;
+}
+
+.eventos .palestrantes {
+	clear: both;
+	display: flex;
+	margin-top: 1rem;
+}
+
+.eventos .palestrantes li {
+	display: flex;
+	flex: 1;
+	padding-right: 1em;
+	align-items: center;
+}
+
+.eventos .palestrantes h4 {
+	font-size: 1rem;
+}
+
+.eventos .palestrantes img {
+	border-radius: 50%;
+	margin-right: 0.5rem;
+}
+
+@media (min-width: 600px) {
+	
+	.menu-principal-label {
+		display: none;
+	}
+
+	.secao-links, .menu-principal {
+		width: auto;
+	}
+
+	.menu-principal {
+		display: flex;
+		transform: none;
+		background-color: transparent;
+		position: static;
+		width: auto;
+		height: auto;
+	}
+
+	.cabecalho {
+		display: flex;
+	}
+
+	.secao-links .secao-link {
+		padding-right: 1em;
+	}
+
+	.secao-links .secao-link:first-child {
+		display: none;
+	}
+
+	.menu-principal .secao-link {
+		display: flex;
+		padding: 0 1em 0 0;
+	}
+
+}
+
