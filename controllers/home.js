@@ -11,17 +11,21 @@ let loadSpeakers = (() => {
     getSpeakers: speakers,
     getCurrentSpeakers: speakers.filter((s) => s.current),
     getSpeakerByName(name) {
-      return speakers.filter((s) => s.link === name);
+      return speakers.find(s => s.link === name);
     }
   }
 })();
 
 router.get(['/', 'index.html'], (req, res) => {
-	res.render('index', {speakers: loadSpeakers.getCurrentSpeakers});
+	res.render('home', {speakers: loadSpeakers.getCurrentSpeakers});
+});
+
+router.get('/palestrantes', (req, res) => {
+  res.render('speakers', {speakers: loadSpeakers.getCurrentSpeakers});
 });
 
 router.get('/palestrante/:link', (req, res) => {
-  res.render('speaker', {speaker: loadSpeakers.getSpeakerByName(req.params.link)});
+  res.render('speaker', loadSpeakers.getSpeakerByName(req.params.link));
 });
 
 router.get('/eventos', (req, res) => {

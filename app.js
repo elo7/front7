@@ -13,14 +13,13 @@ app.use("/sw.js", express.static(ASSETS_PATH + '/js/sw.js'));
 app.use('/views', express.static('views'));
 app.use('/data', express.static('data'));
 
-app.engine('html', handlebars.create({helpers: handlebarsHelpers(), extname: 'html'}).engine);
+app.engine('html', handlebars.create({defaultLayout: 'main', helpers: handlebarsHelpers(), extname: 'html'}).engine);
+app.set('views', 'views/templates');
 app.set('view engine', 'html');
 
 let homeController = require('./controllers/home');
 
-app.get('/', homeController);
-app.get('/palestrante/:link', homeController);
-app.get('/eventos', homeController);
+app.use('/', homeController);
 
 let listener = app.listen(process.env.PORT || 3000, () => {
   console.log('Up at port', listener.address().port);
