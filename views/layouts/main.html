@@ -49,8 +49,17 @@
 			</div>
 		</footer>
 	</div>
+	<script src='/assets/js/vendor/async-define.js'></script>
+	<script async src='/assets/js/vendor/handlebars.js'></script>
+	<script async src='/assets/js/vendor/events.js'></script>
+	<script async src='/assets/js/vendor/doc.js'></script>
+	<script async src='/assets/js/vendor/ajax.js'></script>
 	<script async src='/assets/js/home.js'></script>
 	<script>
+	define(['doc', 'handlebars'], function($, handlebars) {
+		console.log($, handlebars);
+	});
+
 		if (navigator.onLine) {
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
