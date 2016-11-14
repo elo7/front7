@@ -16,8 +16,24 @@ let loadSpeakers = (() => {
   }
 })();
 
+let loadEvents = (() => {
+  let events = JSON.parse(fs.readFileSync('data/events.json', 'utf8')).events;
+  events.forEach(event => {
+    let speakers = [];
+    event.speakers.forEach(speaker => {
+      speakers.push(loadSpeakers.getSpeakerByName(speaker));
+    });
+    event.speakers = speakers;
+  });
+
+  return {
+    getEvents: events,
+    getCurrentEvent: events[0]
+  }
+})();
+
 router.get(['/', 'index.html'], (req, res) => {
-	res.render('home', {speakers: loadSpeakers.getCurrentSpeakers});
+	res.render('home', {event: loadEvents.getCurrentEvent});
 });
 
 router.get('/palestrantes', (req, res) => {
@@ -29,7 +45,7 @@ router.get('/palestrante/:link', (req, res) => {
 });
 
 router.get('/eventos', (req, res) => {
-  res.render('events');
+  res.render('events', {events: loadEvents.getEvents});
 });
 
 module.exports = router;

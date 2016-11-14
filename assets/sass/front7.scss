@@ -316,22 +316,46 @@ body {
 
 	.subtitulo {
 		color: #333;
-		margin-bottom: 0.5rem;
+		margin-bottom: 1rem;
 	}
 
 	.descricao {
 		font-size: 1rem;
 	}
 
-	.palestras {
+	.palestra {
 		overflow: auto;
-		margin-bottom: 1rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.details {
+		line-height: 1.2;
+		font-size: 1rem;
+
+		dt {
+			color: #333;
+			display: inline;
+
+			&:after {
+				content: ': '
+			}
+		}
+
+		dd {
+			display: inline;
+		}
+
+		dd + dt:before {
+			content: '\A';
+			white-space: pre;
+		}
 	}
 
 	.palestrantes {
 		clear: both;
 		display: flex;
 		margin-top: 1rem;
+		margin-bottom: 1rem;
 
 		li {
 			display: flex;

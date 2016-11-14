@@ -1,0 +1,79 @@
+{
+	"events" : [
+		{
+			"date": "2016-12-05 18:30",
+			"lectures": [
+				{
+					"title": "O que é Progressive Web Apps?",
+					"description": "A definir",
+					"image": "/assets/images/events/devtools.jpg",
+					"date": "2016-12-05 18:45"
+				},
+				{
+					"title": "Como implementar um service worker",
+					"description": "A definir",
+					"image": "/assets/images/events/devtools.jpg",
+					"date": "2016-12-05 19:30"
+				}
+			],
+			"speakers": ["erika.takahara", "tiago.vasconcelos"]
+
+		},
+		{
+			"date": "2016-07-04 18:45",
+			"lectures": [
+				{
+					"title": "Vida mais fácil com Chrome DevTools - parte 1",
+					"description": "Chrome DevTools: venha melhorar suas habilidades de front-end (design e produto também podem participar). Essa é uma ferramenta essencial para quem trabalha com web, vamos mostrar as abas Elements, Animation, Sources e como o Command Line pode te deixar mais produtivo.",
+					"image": "/assets/images/events/devtools.jpg",
+					"date": "2016-12-05 18:45"
+				},
+				{
+					"title": "Vida mais fácil com Chrome DevTools - parte 2",
+					"description": "Depois do coffee-break vamos falar sobre as abas Network para analisar a performance da sua aplicação, Acessibilidade, para saber como seu site está lidando com essa questão, Application para nos ajudar a desenvolver um site com PWA e Timeline/Profile para verificar a qualidade do seu código.",
+					"image": "/assets/images/events/devtools.jpg",
+					"date": "2016-12-05 19:30"
+				}
+			],
+			"speakers": ["aline.lee", "tiago.vasconcelos"]
+
+		},
+		{
+			"date": "2016-07-04 18:30",
+			"lectures": [
+				{
+					"title": "Web Components @ Elo7 - parte 1",
+					"description": "Web Components é uma nova tecnologia que promete facilitar a vida do desenvolvedor front-end, ajudando-o a organizar e reaproveitar o código. Porém, além de ser uma tecnologia recente e em constante evolução, pouco se fala de casos de uso da tecnologia pura, sem bibliotecas, e como fica a vida de quem não tem suporte a essa novidade. Nesta palestra, vamos ver por que e como estamos usando essa tecnologia hoje no Elo7 para criar nossos próprios componentes, quais desafios encontramos e o que o futuro promete.",
+					"image": "/assets/images/events/webcomponents.png",
+					"date": "2016-07-04 18:45"
+				},
+				{
+					"title": "Web Components @ Elo7 - parte 2",
+					"description": "Web Components é uma nova tecnologia que promete facilitar a vida do desenvolvedor front-end, ajudando-o a organizar e reaproveitar o código. Porém, além de ser uma tecnologia recente e em constante evolução, pouco se fala de casos de uso da tecnologia pura, sem bibliotecas, e como fica a vida de quem não tem suporte a essa novidade. Nesta palestra, vamos ver por que e como estamos usando essa tecnologia hoje no Elo7 para criar nossos próprios componentes, quais desafios encontramos e o que o futuro promete.",
+					"image": "/assets/images/events/webcomponents.png",
+					"date": "2016-07-04 19:30"
+				}
+			],
+			"speakers": ["luiz.real"]
+		},
+		{
+			"date": "2016-03-07 18:30",
+			"lectures": [
+				{
+					"title": "Jogos: indo além do simples CSS!",
+					"description": "Há quem pense que o CSS serve somente para aplicar estilos a determinados elementos, e realmente seu principal objetivo é esse! Mas alguém já pensou que seria possível capturar eventos, como um evento de clique por exemplo, e gerar algum tipo de animação com isso? E falar que com isso é possível criar um jogo? Neste talk explicarei como criar um jogo simples, sem uma linha de javascript, usando apenas HTML e CSS. Além de muitas de suas funcionalidades: pseudo-elementos, pseudo-classes, animations, entre outras.",
+					"image": "/assets/images/events/css.png",
+					"date": "2016-03-07 18:30"
+				},
+				{
+					"title": "Progressive Web Apps: o melhor da Web, appficada",
+					"description": "A Web está evoluindo e correndo atrás das Apps. Muito do que só se fazia com código nativo hoje tem como na Web. Mas ainda faltava aquele passo final. A experiência de instalar algo, ter o ícone da home do usuário, usar offline, se integrar com a plataforma e rodar fora do browser. A Web chegou lá. Conheça as Progressive Web Apps instaláveis. Nessa palestra, vamos ver WebManifest, ServiceWorkers, PushNotifications e mais. Tudo para dar a melhor experiência da Web com um toque de App sob medida.",
+					"image": "/assets/images/events/pwa.jpg",
+					"date": "2016-03-07 19:45"
+				}
+			],
+			"speakers": ["fernanda.bernardo", "sergio.lopes"]
+
+		}
+	]
+}

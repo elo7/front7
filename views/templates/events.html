@@ -2,42 +2,36 @@
 <section class='secao container'>
 	<h2 class='titulo'>Eventos</h2>
 	<ol class='eventos'>
-		<li class='evento'>
-			<section class='palestras'>
-				<h3 class='subtitulo'>Chrome dev tools</h3>
-				<img class='imagem' src='/assets/images/events/devtools.jpg' width='70' height='70'>
-				<p class='descricao'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis imperdiet nunc, ut vestibulum sem. Vestibulum ante diam, convallis a sagittis ut.</p>
-			</section>
-			<section class='detalhes'>
-				<h3 class='subtitulo'>Palestrantes</h3>
-				<ul class='palestrantes'>
-					<li>
-						<img src='/assets/images/speakers/tiago.jpg' width='40' height='40'>
-						<h4>Tiago Vasconcelos</h4>
-					</li>
-					<li>
-						<img src='/assets/images/speakers/aline.jpg' width='40' height='40'>
-						<h4>Aline Lee Nogueira</h4>
-					</li>
-				</ul>
-			</section>
-		</li>
-
-		<li class='evento'>
-			<section class='palestras'>
-				<h3 class='subtitulo'>Web components</h3>
-				<img class='imagem' src='/assets/images/events/webcomponents.png' width='70' height='70'>
-				<p class='descricao'>Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis imperdiet nunc, ut vestibulum sem. Vestibulum ante diam, convallis a sagittis ut</p>
-			</section>
-			<section class='detalhes'>
-				<h3 class='subtitulo'>Palestrante</h3>
-				<ul class='palestrantes'>
-					<li>
-						<img src='/assets/images/speakers/luiz.jpg' width='40' height='40'>
-						<h4>Luiz Corte Real</h4>
-					</li>
-				</ul>
-			</section>
-		</li>
+		{{#forEach events}}
+			<li class='evento'>
+				{{#forEach ./lectures}}
+					<section class='palestra'>
+							<h3 class='subtitulo'>{{title}}</h3>
+							<img class='imagem' src='{{image}}' width='70' height='70'>
+							<p class='descricao'>{{description}}</p>
+					</section>
+				{{/forEach}}
+				<section class='detalhes'>
+					<h3 class='subtitulo'>{{inflect ./speakers.length "Palestrante" "Palestrantes"}}</h3>
+					<ul class='palestrantes'>
+						{{#forEach ./speakers}}
+							<li>
+								<a href='/palestrante/{{link}}'>
+									<img src='{{avatar}}' width='40' height='40'>
+									<h4>{{name}}</h14>
+								</a>
+							</li>
+						{{/forEach}}
+					</ul>
+					<h3 class='subtitulo'>Evento</h3>
+					<dl class='details'>
+						<dt>Data</dt>
+						<dd><time datetime='2016-12-05' class='horario'>{{date}}</time></dd>
+						<dt>Local</dt>
+						<dd>Rua Beira Rio, 57 - 1 andar - Auditorio</dd>
+					</dl>
+				</section>
+			</li>
+		{{/forEach}}
 	</ol>
 </section>
