@@ -17,9 +17,11 @@ app.engine('html', handlebars.create({defaultLayout: 'main', helpers: handlebars
 app.set('views', 'views/templates');
 app.set('view engine', 'html');
 
-let homeController = require('./controllers/home');
+let homeController = require('./controllers/home'),
+	apiController = require('./controllers/api');
 
 app.use('/', homeController);
+app.use('/api', apiController);
 
 let listener = app.listen(process.env.PORT || 3000, () => {
   console.log('Up at port', listener.address().port);
