@@ -412,3 +412,12 @@ body {
 	}
 
 }
+
+#main {
+	opacity: 1;
+	transition: opacity 1s;
+}
+
+#main.loading {
+	opacity: 0.2;
+}

@@ -1,25 +1,4 @@
-define('router', ['doc', 'handlebars', 'ajax'], function($, handlebars, ajax) {
-	ajax.get('/views/partials/speaker.html', {}, {
-		success: function(template) {
-			handlebars.registerPartial('speaker', template);
-		}
-	});
-
-	ajax.get('/views/partials/speakers.html', {}, {
-		success: function(template) {
-			handlebars.registerPartial('speakers', template);
-		}
-	});
-
-
-	function getTemplate(templateName, cb) {
-		ajax.get('/views/templates/' + templateName + '.html', {}, {
-			success: function(template) {
-				cb(handlebars.compile(template));
-			}
-		});
-	};
-
+define('router', ['doc', 'template'], function($, template) {
 	var registers = [];
 
 	var Router = {
@@ -30,7 +9,7 @@ define('router', ['doc', 'handlebars', 'ajax'], function($, handlebars, ajax) {
 
 		bind: function(namespace) {
 			var $namespace = namespace || $(document); 
-			var $anchors = $namespace.find('a');
+			var $anchors = $namespace.find('a[href^="/"]');
 			$anchors.each(function(el) {
 				var $anchor = $(el);
 				for(var i = 0; i < registers.length; i++) {
@@ -45,39 +24,8 @@ define('router', ['doc', 'handlebars', 'ajax'], function($, handlebars, ajax) {
 		}
 	};
 
-	var loadTemplate = function(config) {
-		console.log('Loading', config);
-		ajax.get(config.apiUrl, {}, {
-			success: function(json) {
-				getTemplate(config.templateName, function(template) {
-					$('#main').html(template(json));
-				});
-			}
-		});
-		Router.bind($('#main'));
-	};
-
-	var event = function(uri, apiUrl, templateName, title) {
-
-		return function(e) {
-			e.preventDefault();
-
-			var state = {
-				uri: uri,
-				apiUrl: apiUrl,
-				templateName: templateName
-			};
-
-			history.pushState(state, title, uri);
-
-			loadTemplate(state);
-
-		};
-	};
-
-	var Route = function(uriRegex, apiRegex, templateName, title) {
+	var Route = function(uriRegex, apiRegex, templateName) {
 		var match = function(uri) {
-			console.log(uri, 'matches', uriRegex, '?', uri.match(uriRegex));
 			return uri.match(uriRegex);
 		};
 
@@ -94,19 +42,36 @@ define('router', ['doc', 'handlebars', 'ajax'], function($, handlebars, ajax) {
 			return apiUrl;
 		};
 
-		if(match(location.pathname)) {
+		var event = function(uri, apiUrl, templateName) {
+			return function(e) {
+				e.preventDefault();
+
+				var state = {
+					uri: uri,
+					apiUrl: apiUrl,
+					templateName: templateName
+				};
+
+				history.pushState(state, "Front7", uri);
+
+				template.loadTemplate(state, function() {
+					Router.bind($('#main'));
+				});
+			};
+		};
+
+		if(!history.state && match(location.pathname)) {
 			var state = {
 				uri: location.pathname,
 				apiUrl: apiUrl(location.pathname),
 				templateName: templateName
 			};
 
-			history.replaceState(state, title, location.pathname);
+			history.replaceState(state, "Front7", location.pathname);
 		}
 
 		return {
 			'match': match,
-
 			'event': function(uri) {
 				return event(uri, apiUrl(uri), templateName);
 			}
@@ -115,7 +80,9 @@ define('router', ['doc', 'handlebars', 'ajax'], function($, handlebars, ajax) {
 	};
 
 	window.onpopstate = function(event) {
-		loadTemplate(event.state);
+		template.loadTemplate(event.state, function() {
+			Router.bind($('#main'));
+		});
 	};
 
 	return Router;
