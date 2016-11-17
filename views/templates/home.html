@@ -42,7 +42,7 @@
 	</section>
 	<section id='palestrantes'>
 		<div class='secao container'>
-			<h2 class='titulo'>{{inflect ./speakers.length "Palestrante" "Palestrantes"}}</h2>
+			<h2 class='titulo'>{{pluralize ./speakers.length "Palestrante" "Palestrantes"}}</h2>
 			{{>speakers}}
 		</div>
 	</section>

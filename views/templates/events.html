@@ -2,26 +2,26 @@
 <section class='secao container'>
 	<h2 class='titulo'>Eventos</h2>
 	<ol class='eventos'>
-		{{#forEach events}}
+		{{#each events}}
 			<li class='evento'>
-				{{#forEach ./lectures}}
+				{{#each ./lectures}}
 					<section class='palestra'>
 							<h3 class='subtitulo'>{{title}}</h3>
 							<img class='imagem' src='{{image}}' width='70' height='70'>
 							<p class='descricao'>{{description}}</p>
 					</section>
-				{{/forEach}}
+				{{/each}}
 				<section class='detalhes'>
-					<h3 class='subtitulo'>{{inflect ./speakers.length "Palestrante" "Palestrantes"}}</h3>
+					<h3 class='subtitulo'>{{pluralize ./speakers.length "Palestrante" "Palestrantes"}}</h3>
 					<ul class='palestrantes'>
-						{{#forEach ./speakers}}
+						{{#each ./speakers}}
 							<li>
 								<a href='/palestrante/{{link}}'>
 									<img src='{{avatar}}' width='40' height='40'>
 									<h4>{{name}}</h14>
 								</a>
 							</li>
-						{{/forEach}}
+						{{/each}}
 					</ul>
 					<h3 class='subtitulo'>Evento</h3>
 					<dl class='details'>
@@ -32,6 +32,6 @@
 					</dl>
 				</section>
 			</li>
-		{{/forEach}}
+		{{/each}}
 	</ol>
 </section>

@@ -1,6 +1,6 @@
 let express = require('express'),
   handlebars = require('express-handlebars'),
-  handlebarsHelpers = require('handlebars-helpers'),
+  handlebarsHelpers = require('./assets/js/helpers.js'),
   compression = require('compression'),
   app = express();
 
@@ -13,7 +13,7 @@ app.use("/sw.js", express.static(ASSETS_PATH + '/js/sw.js'));
 app.use('/views', express.static('views'));
 app.use('/data', express.static('data'));
 
-app.engine('html', handlebars.create({defaultLayout: 'main', helpers: handlebarsHelpers(), extname: 'html'}).engine);
+app.engine('html', handlebars.create({defaultLayout: 'main', helpers: handlebarsHelpers, extname: 'html'}).engine);
 app.set('views', 'views/templates');
 app.set('view engine', 'html');
 

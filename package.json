@@ -31,8 +31,7 @@
   "dependencies": {
     "compression": "1.6.2",
     "express": "4.14.0",
-    "express-handlebars": "3.0.0",
-    "handlebars-helpers": "0.7.5"
+    "express-handlebars": "3.0.0"
   },
   "devDependencies": {
     "node-sass": "3.11.2",

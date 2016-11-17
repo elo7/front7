@@ -1,4 +1,4 @@
 <div class='secao container'>
-	<h2 class='titulo'>{{inflect speakers.length "Palestrante" "Palestrantes"}} {{./name}}</h2>
+	<h2 class='titulo'>{{pluralize speakers.length "Palestrante" "Palestrantes"}} {{./name}}</h2>
 	{{>speaker}}
 </div>
