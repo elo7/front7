@@ -33,7 +33,7 @@ let loadEvents = (() => {
 })();
 
 router.get(['/', 'index.html'], (req, res) => {
-	res.render('home', {event: loadEvents.getCurrentEvent});
+	res.render('home', loadEvents.getCurrentEvent);
 });
 
 router.get('/palestrantes', (req, res) => {

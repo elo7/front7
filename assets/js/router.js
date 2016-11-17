@@ -19,70 +19,12 @@ define('router', ['doc', 'handlebars', 'ajax'], function($, handlebars, ajax) {
 			}
 		});
 	};
-	// router.register('/palestrante/(.*)', /api/palestrante/(.*), 'palestrantes');
 
 	var registers = [];
 
-	var loadTemplate = function(config) {
-		ajax.get(config.apiUrl, {}, {
-			success: function(json) {
-				getTemplate(config.templateName, function(template) {
-					$('#main').html(template(json));
-				});
-			}
-		});
-	};
-
-	var event = function(uri, apiUrl, templateName, title) {
-
-		return function(e) {
-			e.preventDefault();
-
-			history.pushState({
-				uri: uri,
-				apiUrl: apiUrl,
-				title: title
-			}, 'Palestrante', uri);
-
-			loadTemplate({
-				apiUrl: apiUrl,
-				templateName: templateName
-			});
-
-		};
-	};
-
-	var LoadEvent = function(uriRegex, apiRegex, templateName) {
-
-
-		return {
-			'match': function(uri) {
-				return uri.match(uriRegex);
-			},
-
-			'event': function(uri) {
-				var params = uri.match(uriRegex);
-				params.shift(); // Remove first match
-
-				var apiUrl = apiRegex;
-				if(params) {
-					for(var i = 0; i < params.length; i++) {
-						apiUrl = apiUrl.replace('{' + i + '}', params[i]);
-					}
-				}
-				return event(uri, apiUrl, templateName);
-			}
-		}
-
-	};
-
-	window.onpopstate = function(param) {
-		console.log(param);
-	};
-
 	var Router = {
 		register: function(uriRegex, apiRegex, templateName) {
-			registers.push(LoadEvent(uriRegex, apiRegex, templateName));
+			registers.push(Route(uriRegex, apiRegex, templateName));
 			return this;
 		},
 
@@ -101,6 +43,79 @@ define('router', ['doc', 'handlebars', 'ajax'], function($, handlebars, ajax) {
 				}
 			});
 		}
+	};
+
+	var loadTemplate = function(config) {
+		console.log('Loading', config);
+		ajax.get(config.apiUrl, {}, {
+			success: function(json) {
+				getTemplate(config.templateName, function(template) {
+					$('#main').html(template(json));
+				});
+			}
+		});
+		Router.bind($('#main'));
+	};
+
+	var event = function(uri, apiUrl, templateName, title) {
+
+		return function(e) {
+			e.preventDefault();
+
+			var state = {
+				uri: uri,
+				apiUrl: apiUrl,
+				templateName: templateName
+			};
+
+			history.pushState(state, title, uri);
+
+			loadTemplate(state);
+
+		};
+	};
+
+	var Route = function(uriRegex, apiRegex, templateName, title) {
+		var match = function(uri) {
+			console.log(uri, 'matches', uriRegex, '?', uri.match(uriRegex));
+			return uri.match(uriRegex);
+		};
+
+		var apiUrl = function(uri) {
+			var params = uri.match(uriRegex);
+			params.shift(); // Remove first match
+
+			var apiUrl = apiRegex;
+			if(params) {
+				for(var i = 0; i < params.length; i++) {
+					apiUrl = apiUrl.replace('{' + i + '}', params[i]);
+				}
+			}
+			return apiUrl;
+		};
+
+		if(match(location.pathname)) {
+			var state = {
+				uri: location.pathname,
+				apiUrl: apiUrl(location.pathname),
+				templateName: templateName
+			};
+
+			history.replaceState(state, title, location.pathname);
+		}
+
+		return {
+			'match': match,
+
+			'event': function(uri) {
+				return event(uri, apiUrl(uri), templateName);
+			}
+		}
+
+	};
+
+	window.onpopstate = function(event) {
+		loadTemplate(event.state);
 	};
 
 	return Router;

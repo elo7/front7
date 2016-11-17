@@ -44,4 +44,8 @@ router.get('/eventos', (req, res) => {
   res.json(loadEvents.getEvents);
 });
 
+router.get('/atual', (req, res) => {
+  res.json(loadEvents.getCurrentEvent);
+});
+
 module.exports = router;
