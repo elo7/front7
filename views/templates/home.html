@@ -42,8 +42,10 @@
 	</section>
 	<section id='palestrantes'>
 		<div class='secao container'>
-			<h2 class='titulo'>{{pluralize ./speakers.length "Palestrante" "Palestrantes"}}</h2>
-			{{>speakers}}
+			{{#with speakers}}
+				<h2 class='titulo'>{{pluralize . "Palestrante" "Palestrantes"}}</h2>
+				{{>speakers}}
+			{{/with}}
 		</div>
 	</section>
 	<section class='secao' id='local' itemprop='location' itemscope itemtype='http://schema.org/Place'>

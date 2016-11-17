@@ -1,12 +1,16 @@
 var __helpers = {
-	'pluralize': function(length, singular, plural) {
-		return length > 0? plural : singular;
+	'pluralize': function(array, singular, plural) {
+		if(typeof array === 'object') {
+		 	return Object.keys(array).filter(function(k) { return !isNaN(k) }).length > 1? plural : singular;
+		}
+		return array.length > 0? plural : singular;
 	},
 
-	'each': function(context, options) {
+	'each': function(list, options) {
 		var ret = '';
-		for(var i = 0, j = context.length; i < j; i++) {
-			ret = ret + options.fn(context[i]);
+		for(var item in list) {
+			if(isNaN(item)) continue;
+			ret = ret + options.fn(list[item]);
 		}
 		return ret;
 	}

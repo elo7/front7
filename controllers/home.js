@@ -37,7 +37,7 @@ router.get(['/', 'index.html'], (req, res) => {
 });
 
 router.get('/palestrantes', (req, res) => {
-  res.render('speakers', {speakers: loadSpeakers.getCurrentSpeakers});
+  res.render('speakers', loadSpeakers.getSpeakers);
 });
 
 router.get('/palestrante/:link', (req, res) => {
@@ -45,7 +45,7 @@ router.get('/palestrante/:link', (req, res) => {
 });
 
 router.get('/eventos', (req, res) => {
-  res.render('events', {events: loadEvents.getEvents});
+  res.render('events', loadEvents.getEvents);
 });
 
 module.exports = router;
