@@ -1,5 +1,5 @@
 define(['doc', 'router'], function($, router) {
-	var $main = $('#main');
+	let $main = $('#main');
 	$main.on('templateLoad', function() {
 		$('#menu-principal-trigger').first().checked = false;
 		$main.addClass('loading');
@@ -10,9 +10,9 @@ define(['doc', 'router'], function($, router) {
 	});
 
 	router
-		.register('/palestrante/(.*)', '/api/palestrante/{0}', 'speaker')
-		.register('/palestrantes', '/api/palestrantes', 'speakers')
-		.register('/eventos', '/api/eventos', 'events')
-		.register('/', '/api/atual', 'home')
+		.register({uriRegex: '/palestrante/(.*)', apiRegex: '/api/palestrante/{0}', templateName: 'speaker'})
+		.register({uriRegex: '/palestrantes', apiRegex: '/api/palestrantes', templateName: 'speakers'})
+		.register({uriRegex: '/eventos', apiRegex: '/api/eventos', templateName: 'events'})
+		.register({uriRegex: '/', apiRegex: '/api/atual', templateName: 'home'})
 		.bind();
 });

@@ -1,52 +1,55 @@
 define('router', ['doc', 'template'], function($, template) {
-	var registers = [];
+	let registers = [];
 
-	var Router = {
-		register: function(uriRegex, apiRegex, templateName) {
-			registers.push(Route(uriRegex, apiRegex, templateName));
+	let Router = {
+		register: function(options) {
+			registers.push(Route(options));
 			return this;
 		},
 
 		bind: function(namespace) {
-			var $namespace = namespace || $(document); 
-			var $anchors = $namespace.find('a[href^="/"]');
+			let $namespace = namespace || $(document);
+			let $anchors = $namespace.find('a[href^="/"]');
 			$anchors.each(function(el) {
-				var $anchor = $(el);
-				for(var i = 0; i < registers.length; i++) {
-					var register = registers[i];
-					var uri = $anchor.attr('href');
-					if(register.match(uri)) {
-						$anchor.on('click', register.event(uri));
-						break;
+				let $anchor = $(el),
+					uri = $anchor.attr('href');
+
+				if(uri.indexOf('/#') == -1) {
+					for(let i = 0; i < registers.length; i++) {
+						let register = registers[i];
+						if(register.match(uri)) {
+							$anchor.on('click', register.event(uri));
+							break;
+						}
 					}
 				}
 			});
 		}
 	};
 
-	var Route = function(uriRegex, apiRegex, templateName) {
-		var match = function(uri) {
+	let Route = function({uriRegex, apiRegex, templateName}) {
+		let match = function(uri) {
 			return uri.match(uriRegex);
 		};
 
-		var apiUrl = function(uri) {
-			var params = uri.match(uriRegex);
+		let apiUrl = function(uri) {
+			let params = uri.match(uriRegex);
 			params.shift(); // Remove first match
 
-			var apiUrl = apiRegex;
+			let apiUrl = apiRegex;
 			if(params) {
-				for(var i = 0; i < params.length; i++) {
+				for(let i = 0; i < params.length; i++) {
 					apiUrl = apiUrl.replace('{' + i + '}', params[i]);
 				}
 			}
 			return apiUrl;
 		};
 
-		var event = function(uri, apiUrl, templateName) {
+		let event = function(uri, apiUrl, templateName) {
 			return function(e) {
 				e.preventDefault();
 
-				var state = {
+				let state = {
 					uri: uri,
 					apiUrl: apiUrl,
 					templateName: templateName
@@ -61,7 +64,7 @@ define('router', ['doc', 'template'], function($, template) {
 		};
 
 		if(!history.state && match(location.pathname)) {
-			var state = {
+			let state = {
 				uri: location.pathname,
 				apiUrl: apiUrl(location.pathname),
 				templateName: templateName

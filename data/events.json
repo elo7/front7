@@ -68,7 +68,6 @@
 				{
 					"title": "Progressive Web Apps: o melhor da Web, appficada",
 					"description": "A Web está evoluindo e correndo atrás das Apps. Muito do que só se fazia com código nativo hoje tem como na Web. Mas ainda faltava aquele passo final. A experiência de instalar algo, ter o ícone da home do usuário, usar offline, se integrar com a plataforma e rodar fora do browser. A Web chegou lá. Conheça as Progressive Web Apps instaláveis. Nessa palestra, vamos ver WebManifest, ServiceWorkers, PushNotifications e mais. Tudo para dar a melhor experiência da Web com um toque de App sob medida.",
-					"image": "/assets/images/events/pwa.jpg",
 					"date": "2016-03-07 19:45"
 				}
 			],
