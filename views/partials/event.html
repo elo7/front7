@@ -1,0 +1,29 @@
+{{#each ./lectures}}
+	<section class='palestra'>
+			<h3 class='subtitulo'><a href='/evento/{{./../link}}'>{{title}}</a></h3>
+			{{#if image}}
+				<img class='imagem' src='{{image}}' width='70' height='70'>
+			{{/if}}
+			<p class='descricao'>{{description}}</p>
+	</section>
+{{/each}}
+<section class='detalhes'>
+	<h3 class='subtitulo'>{{pluralize ./speakers.length "Palestrante" "Palestrantes"}}</h3>
+	<ul class='palestrantes'>
+		{{#each ./speakers}}
+			<li>
+				<a href='/palestrante/{{link}}'>
+					<img src='{{avatar}}' width='40' height='40'>
+					<h4>{{name}}</h14>
+				</a>
+			</li>
+		{{/each}}
+	</ul>
+	<h3 class='subtitulo'>Evento</h3>
+	<dl class='details'>
+		<dt>Data</dt>
+		<dd><time datetime='2016-12-05' class='horario'>{{date}}</time></dd>
+		<dt>Local</dt>
+		<dd>Rua Beira Rio, 57 - 1 andar - Auditorio</dd>
+	</dl>
+</section>

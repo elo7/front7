@@ -2,16 +2,17 @@
 	"events" : [
 		{
 			"date": "2016-12-05 18:30",
+			"link": "4-edicao",
 			"lectures": [
 				{
 					"title": "O que é Progressive Web Apps?",
-					"description": "A definir",
+					"description": "Atualmente ouvimos falar muito de pwa, mas afinal o que isso agrega ao meu site? É muito complicado? O que eu preciso fazer para implementar? Nessa primeira parte vamos explicar o conceito de progressive web apps, como isso pode ajudar na conversão do seu site e o que vem por aí.",
 					"image": "/assets/images/events/devtools.jpg",
 					"date": "2016-12-05 18:45"
 				},
 				{
 					"title": "Como implementar um service worker",
-					"description": "A definir",
+					"description": "Nessa segunda parte, vamos explicar com mais detalhes para que serve um Service Worker, quais são as estratégias para funcionar offline e as funcionalidades que aproxima o nosso webapp a um app nativo.",
 					"image": "/assets/images/events/devtools.jpg",
 					"date": "2016-12-05 19:30"
 				}
@@ -21,6 +22,7 @@
 		},
 		{
 			"date": "2016-07-04 18:45",
+			"link": "3-edicao",
 			"lectures": [
 				{
 					"title": "Vida mais fácil com Chrome DevTools - parte 1",
@@ -40,6 +42,7 @@
 		},
 		{
 			"date": "2016-07-04 18:30",
+			"link": "2-edicao",
 			"lectures": [
 				{
 					"title": "Web Components @ Elo7 - parte 1",
@@ -58,6 +61,7 @@
 		},
 		{
 			"date": "2016-03-07 18:30",
+			"link": "1-edicao",
 			"lectures": [
 				{
 					"title": "Jogos: indo além do simples CSS!",

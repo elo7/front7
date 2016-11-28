@@ -13,6 +13,7 @@ define(['doc', 'router'], function($, router) {
 		.register({uriRegex: '/palestrante/(.*)', apiRegex: '/api/palestrante/{0}', templateName: 'speaker'})
 		.register({uriRegex: '/palestrantes', apiRegex: '/api/palestrantes', templateName: 'speakers'})
 		.register({uriRegex: '/eventos', apiRegex: '/api/eventos', templateName: 'events'})
+		.register({uriRegex: '/evento/(.*)', apiRegex: '/api/evento/{0}', templateName: 'event'})
 		.register({uriRegex: '/', apiRegex: '/api/atual', templateName: 'home'})
 		.bind();
 });

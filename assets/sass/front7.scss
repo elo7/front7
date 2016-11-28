@@ -98,6 +98,22 @@ body {
 	}
 }
 
+.menu-principal-label {
+	display: block;
+	text-indent: -9999px;
+	position: relative;
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 30px;
+		height: 2px;
+		background-color: white;
+		box-shadow: white 0px 7px 0px 0px, white 0px 14px 0px 0px;
+	}
+}
+
 .menu-principal-close {
 	position: absolute;
 	left: 0;

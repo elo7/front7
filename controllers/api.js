@@ -28,7 +28,10 @@ let loadEvents = (() => {
 
   return {
     getEvents: events,
-    getCurrentEvent: events[0]
+    getCurrentEvent: events[0],
+    getEventBySlug(link) {
+      return events.find(s => s.link === link);
+    }
   }
 })();
 
@@ -42,6 +45,10 @@ router.get('/palestrante/:link', (req, res) => {
 
 router.get('/eventos', (req, res) => {
   res.json(loadEvents.getEvents);
+});
+
+router.get('/evento/:link', (req, res) => {
+  res.json(loadEvents.getEventBySlug(req.params.link));
 });
 
 router.get('/atual', (req, res) => {
