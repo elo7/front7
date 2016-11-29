@@ -429,6 +429,53 @@ body {
 
 }
 
+#push-notification-preference {
+	display: none;
+
+	&:checked ~ .push-preference:before {
+		transform: translateX(15px);
+		background-color: #359c9c;
+	}
+}
+
+.push-preference {
+	position: relative;
+	padding-left: 40px;
+
+	&:before {
+		content: '';
+		background-color: gray;
+		border-radius: 50%;
+		left: 2px;
+		top: 2px;
+		width: 15px;
+		height: 15px;
+		display: block;
+		position: absolute;
+		z-index: 1;
+		transform: translateX(0);
+		transition: 0.5s transform, 0.5s background-color;
+	}
+
+	&:after {
+		content: '';
+		background-color: lightgray;
+		border-radius: 20px;
+		left: 0;
+		top: 0;
+		width: 34px;
+		height: 19px;
+		display: block;
+		position: absolute;
+	}
+}
+
+.push-preference {
+	display: block;
+	font-size: 1rem;
+	margin-top: 1em;
+}
+
 #main {
 	opacity: 1;
 	transition: opacity 1s;
