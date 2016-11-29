@@ -1,4 +1,4 @@
-var CACHE_NAME = '0.11';
+var CACHE_NAME = '0.12';
 
 self.addEventListener('activate', function(event) {
 	event.waitUntil(

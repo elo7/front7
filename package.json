@@ -34,6 +34,7 @@
     "express-handlebars": "3.0.0"
   },
   "devDependencies": {
+    "body-parser": "1.15.2",
     "node-sass": "3.11.2",
     "nodemon": "1.11.0",
     "parallelshell": "2.0.0"

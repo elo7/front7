@@ -437,3 +437,36 @@ body {
 #main.loading {
 	opacity: 0.2;
 }
+
+#contato {
+	label {
+		display: block;
+	}
+
+	input, textarea, select {
+		display: block;
+		margin-bottom: 1em;
+		width: 100%;
+		border-radius: 3px;
+		border: 1px solid #c1c1c1;
+		padding: 0.5em;
+		margin-top: 0.5em;
+	}
+
+	select {
+		background-color: #fff;
+	}
+
+	textarea {
+		resize: none;
+	}
+
+	.enviar {
+		background-color: #f9a90e;
+		padding-top: 0.8em;
+		padding-bottom: 0.8em;
+		border: none;
+		border-radius: 3px;
+		color: #fff;
+	}
+}

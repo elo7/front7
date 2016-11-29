@@ -2,9 +2,11 @@ let express = require('express'),
   handlebars = require('express-handlebars'),
   handlebarsHelpers = require('./assets/js/helpers.js'),
   compression = require('compression'),
+  bodyParser = require('body-parser'),
   app = express();
 
 app.use(compression());
+app.use(bodyParser());
 
 const ASSETS_PATH = 'assets';
 app.use('/' + ASSETS_PATH, express.static(ASSETS_PATH));

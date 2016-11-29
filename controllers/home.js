@@ -55,4 +55,16 @@ router.get('/evento/:link', (req, res) => {
   res.render('event', loadEvents.getEventBySlug(req.params.link));
 });
 
+router.get('/contato', (req, res) => {
+  res.render('contact');
+});
+
+router.post('/contato/enviar', (req, res) => {
+  console.log(req.body.name);
+  console.log(req.body.email);
+  console.log(req.body.subject);
+  console.log(req.body.message);
+  res.redirect('/contato?success=true');
+});
+
 module.exports = router;
