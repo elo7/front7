@@ -59,6 +59,10 @@ router.get('/contato', (req, res) => {
   res.render('contact');
 });
 
+router.post('/subscription', (req, res) => {
+  console.log('subscriptionId', req.body.subscriptionId);
+});
+
 router.post('/contato/enviar', (req, res) => {
   console.log(req.body.name);
   console.log(req.body.email);
