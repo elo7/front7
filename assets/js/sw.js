@@ -1,4 +1,6 @@
-var CACHE_NAME = '0.12';
+importScripts('/assets/js/vendor/idbKeyval.js');
+
+var CACHE_NAME = '0.12.1';
 
 self.addEventListener('activate', function(event) {
 	event.waitUntil(
@@ -21,9 +23,9 @@ self.addEventListener('install', function(event){
 	        return response.json();
 	      })
 	      .then(function(files) {
-					caches.open(CACHE_NAME).then(function(cache) {
-	        	cache.addAll(files);
-					})
+				caches.open(CACHE_NAME).then(function(cache) {
+					cache.addAll(files);
+				})
 	      })
 	      .then(function() {
 	        return self.skipWaiting(); //this is for skip the sw activate rules (when all tabs running this sw are closed)
@@ -41,6 +43,23 @@ self.addEventListener('fetch', function(event) {
 	}
 });
 
+self.addEventListener('sync', function(event) {
+	console.log(event);
+		idbKeyval.get(event.tag).then(config => {
+			fetch(config.action, {
+				'method': 'POST',
+				'body': JSON.stringify(config.data),
+				'headers': {
+					'Content-Type': 'application/json'
+				}
+			}).then(() => {
+				idbKeyval.delete(event.tag);
+				console.log('Post success!');
+			})
+			.catch(() => console.log('Post failure =('));
+		});
+});
+
 self.addEventListener('push', function(event) {
 	const title = '4 Edição do Front7';
 	const options = {
@@ -48,8 +67,4 @@ self.addEventListener('push', function(event) {
 	};
 
 	event.waitUntil(self.registration.showNotification(title, options));
-});
-
-self.addEventListener('sync', function(event) {
-	console.log(event);
 });

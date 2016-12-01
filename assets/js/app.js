@@ -1,4 +1,4 @@
-define(['doc', 'router'], function($, router) {
+define(['doc', 'router', 'ajax', 'idb'], function($, router, ajax, idb) {
 	let $main = $('#main');
 	$main.on('templateLoad', function() {
 		$('#menu-principal-trigger').first().checked = false;
@@ -63,11 +63,40 @@ define(['doc', 'router'], function($, router) {
 		});
 	}
 
+	function postData(serviceWorker) {
+		$('#contato').throttle('submit', (e) => {
+			e.preventDefault();
+			let $form  = $(e.target),
+				json = ajax.serializeObject($form.first()),
+				formAction = $form.attr('action');
+			if(navigator.onLine) {
+				ajax.post(formAction, json, {
+					success: () => $form.find('.success').removeClass('hide'),
+					error: () => $form.find('.error').removeClass('hide')
+				}, {
+					async: true
+				});
+			} else {
+				let key = new Date().getTime().toString();
+				idb.set(key, {
+					action: formAction,
+					data: json
+				});
+				serviceWorker.sync.register(key).then(() => {
+					$form.find('.success').removeClass('hide');
+					console.log('Sync registered!');
+				});
+			}
+			$form.first().reset();
+		});
+	}
+
 	if(navigator.onLine) {
 		if ('serviceWorker' in navigator) {
 			navigator.serviceWorker.register('/sw.js', {scope: '/'})
 			.then(function(reg) {
 				pushManager(reg);
+				postData(reg);
 				console.log('Registration succeeded. Scope is ' + reg.scope);
 			}).catch(function(error) {
 				console.log('Registration failed with ' + error);
@@ -87,6 +116,7 @@ define(['doc', 'router'], function($, router) {
 		.register({uriRegex: '/palestrantes', apiRegex: '/api/palestrantes', templateName: 'speakers'})
 		.register({uriRegex: '/eventos', apiRegex: '/api/eventos', templateName: 'events'})
 		.register({uriRegex: '/evento/(.*)', apiRegex: '/api/evento/{0}', templateName: 'event'})
+		.register({uriRegex: '/contato', templateName: 'contact'})
 		.register({uriRegex: '/', apiRegex: '/api/atual', templateName: 'home'})
 		.bind();
 });

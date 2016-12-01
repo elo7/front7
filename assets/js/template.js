@@ -40,17 +40,25 @@ define('template', ['doc', 'handlebars', 'ajax'], function($, handlebars, ajax) 
 	let loadTemplate = function(config, cb) {
 		if(config) {
 			$.broadcast('templateLoad');
-			ajax.get(config.apiUrl, {}, {
-				success: function(json) {
-					getTemplate(config.templateName, function(template) {
-						$('#main').html(template(json));
-						$.broadcast('templateLoaded');
-						cb();
-					});
-				}
-			}, {
-				async: true
-			});
+			if(config.apiUrl) {
+				ajax.get(config.apiUrl, {}, {
+					success: function(json) {
+						getTemplate(config.templateName, function(template) {
+							$('#main').html(template(json));
+							$.broadcast('templateLoaded');
+							cb();
+						});
+					}
+				}, {
+					async: true
+				});
+			} else {
+				getTemplate(config.templateName, function(template) {
+					$('#main').html(template());
+					$.broadcast('templateLoaded');
+					cb();
+				});
+			}
 		}
 	};
 
