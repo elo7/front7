@@ -517,3 +517,20 @@ body {
 		color: #fff;
 	}
 }
+
+.alert {
+	border-radius: 5px;
+	padding: 2%;
+	margin-bottom: 1em;
+	font-size: 0.9em;
+
+	&.success {
+		background-color: #e0fbe1;
+		color: #205a20;
+	}
+
+	&.error {
+		background-color: #e8cacd;
+		color: #502222;
+	}
+}
