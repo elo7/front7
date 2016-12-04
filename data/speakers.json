@@ -4,7 +4,7 @@
       "name": "Erika Takahara",
       "link": "erika.takahara",
       "description": "Formada em Ciências da Computação, tem 26 anos e gosta tanto de front-end quanto de back-end. Começou a carreira na área de criação, mas percebeu que a sua paixão era na área de desenvolvimento. Hoje trabalha como front-end no Elo7. Ela é apaixonada por CSS, HTML e Mangá, não perde um capítulo semanal de One Piece. Ultimamente está estudando sobre progressive web apps e como aplicar isso nos projetos do Elo7.",
-      "avatar": "http://localhost:3000/assets/images/speakers/erika.jpg",
+      "avatar": "/assets/images/speakers/erika.jpg",
       "twitter": "erikatakahara",
       "github": "https://github.com/erikatakahara",
       "current": true
@@ -13,7 +13,7 @@
       "name": "Tiago Vasconcelos",
       "link": "tiago.vasconcelos",
       "description": "Começou a programar para web quando o IE6 era o único navegador que importava, smatphones não existiam e o termo fullstack não era usado, apesar de programar em todas as áreas. Ajudou a fundar e definir a cultura do time front-end Martell. Gosta de ler o One Piece semanal e assistir seu ídolo Cristiano Ronaldo jogar.",
-      "avatar": "http://localhost:3000/assets/images/speakers/tiago.jpg",
+      "avatar": "/assets/images/speakers/tiago.jpg",
       "twitter": "tisvasconcelos",
       "github": "https://github.com/tisvasconcelos/",
       "current": true
@@ -22,7 +22,7 @@
       "name": "Aline Lee Nogueira",
       "link": "aline.lee",
       "description": "Aline Lee Nogueira, 26 anos, é engenheira de Software no Elo7. Atualmente no time de front-end Martell, vindo recentemente do mundo back-end. Se preocupa com a parte de acessibilidade, estudando como tornar o marketplace mais amigável para todos. Mineira que gosta de lámen e de atividades físicas: pratica pilates e caça pokémons.",
-      "avatar": "http://localhost:3000/assets/images/speakers/aline.jpg",
+      "avatar": "/assets/images/speakers/aline.jpg",
       "twitter": "alinelee_n",
       "github": "https://github.com/alinelee"
     },
@@ -30,7 +30,7 @@
       "name": "Luiz Corte Real",
       "link": "luiz.real",
       "description": "É bacharel e mestre em Ciência da Computação, trabalha como engenheiro de software no Elo7 e é um dos instrutores do Alura e um dos autores do livro Coletânea Front-End, da editora Casa do Código. Curte mexer tanto no front quanto no back-end, gosta de filosofar sobre tudo e o Vim é sua plataforma de desenvolvimento preferida.",
-      "avatar": "http://localhost:3000/assets/images/speakers/luiz.jpg",
+      "avatar": "/assets/images/speakers/luiz.jpg",
       "twitter": "",
       "github": "https://github.com/luiz"
     },
@@ -38,7 +38,7 @@
       "name": "Fernanda Bernardo",
       "link": "fernanda.bernardo",
       "description": "Tenho 21 anos e me formei em Sistemas de Informação na USP Leste. Cai na área de tecnologia meio que por sorte e acabei me apaixonando. Gosto tanto de back end quanto de front end e também de assuntos relacionados a UX. Adoro palestrar e estudar assuntos novos. Gosto de assuntos relacionados à saúde, sou diabética e tenho um blog relacionado ao assunto. Apesar disso, adoro doces.",
-      "avatar": "http://localhost:3000/assets/images/speakers/fernanda.jpg",
+      "avatar": "/assets/images/speakers/fernanda.jpg",
       "twitter": "Feh_Bernardo",
       "github": "https://github.com/FernandaBernardo"
     },
@@ -46,7 +46,7 @@
       "name": "Sérgio Lopes",
       "link": "sergio.lopes",
       "description": "Sérgio Lopes é instrutor e desenvolvedor na Caelum. Foca atualmente em front-end, mobile e performance Web. É palestrante em diversos eventos e autor do livro “A Web Mobile”.",
-      "avatar": "http://localhost:3000/assets/images/speakers/sergio.jpg",
+      "avatar": "/assets/images/speakers/sergio.jpg",
       "twitter": "sergio_caelum",
       "github": "https://github.com/sergiolopes"
     }

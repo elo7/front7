@@ -35,7 +35,7 @@ let loadEvents = (() => {
   }
 })();
 
-router.get(['/', 'index.html'], (req, res) => {
+router.get(['/', '/index.html'], (req, res) => {
 	res.render('home', loadEvents.getCurrentEvent);
 });
 

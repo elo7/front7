@@ -5,7 +5,7 @@
   "background_color": "#fdb933",
   "display": "standalone",
   "orientation": "portrait",
-  "start_url": "index.html",
+  "start_url": "/",
   "gcm_sender_id": "301322361540",
   "icons": [
     {

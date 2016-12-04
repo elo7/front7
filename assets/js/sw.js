@@ -63,7 +63,9 @@ self.addEventListener('sync', function(event) {
 self.addEventListener('push', function(event) {
 	const title = '4 Edição do Front7';
 	const options = {
-		body: 'Venha conhecer mais sobre PWA no dia 05/12!'
+		icon: '/assets/images/favicons/favicon-144x144.png',
+		body: 'Venha conhecer mais sobre PWA no dia 05/12!',
+		tag: 'front7'
 	};
 
 	event.waitUntil(self.registration.showNotification(title, options));

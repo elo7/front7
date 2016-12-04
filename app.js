@@ -10,8 +10,8 @@ app.use(bodyParser());
 
 const ASSETS_PATH = 'assets';
 app.use('/' + ASSETS_PATH, express.static(ASSETS_PATH));
-app.use("/manifest.json", express.static(ASSETS_PATH + '/manifest.json'));
-app.use("/sw.js", express.static(ASSETS_PATH + '/js/sw.js'));
+app.use('/manifest.json', express.static(ASSETS_PATH + '/manifest.json'));
+app.use('/sw.js', express.static(ASSETS_PATH + '/js/sw.js'));
 app.use('/views', express.static('views'));
 app.use('/data', express.static('data'));
 
