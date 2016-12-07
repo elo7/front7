@@ -1,4 +1,4 @@
-var CACHE_NAME = '0.5';
+var CACHE_NAME = '0.6';
 var CACHE_URLS = [
 	'index.html',
 	'js/home.js',
