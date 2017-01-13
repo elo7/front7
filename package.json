@@ -4,6 +4,8 @@
   "description": "Front7",
   "main": "app.js",
   "scripts": {
+    "prestart": "npm run build",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:css": "node-sass  assets/sass/ -r --include-path assets/sass/ --output-style compressed --source-map true -o assets/css",
     "build": "npm run build:css",
@@ -31,11 +33,11 @@
   "dependencies": {
     "compression": "1.6.2",
     "express": "4.14.0",
-    "express-handlebars": "3.0.0"
+    "express-handlebars": "3.0.0",
+    "body-parser": "1.15.2",
+    "node-sass": "3.11.2"
   },
   "devDependencies": {
-    "body-parser": "1.15.2",
-    "node-sass": "3.11.2",
     "nodemon": "1.11.0",
     "parallelshell": "2.0.0"
   }
