@@ -1,6 +1,6 @@
 importScripts('/assets/js/vendor/idbKeyval.js');
 
-var CACHE_NAME = '0.12.1';
+var CACHE_NAME = '0.12.3';
 
 self.addEventListener('activate', function(event) {
 	event.waitUntil(
@@ -36,6 +36,9 @@ self.addEventListener('install', function(event){
 self.addEventListener('fetch', function(event) {
 	if(event.request.url.indexOf(self.location.origin) != -1) {
 		event.respondWith(
+			// fetch(event.request).catch(function(){
+			// 	return caches.match(event.request);
+			// })
 			caches.match(event.request).then(function(response){
 				return response || fetch(event.request.clone());
 			})

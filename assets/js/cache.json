@@ -10,6 +10,7 @@
 	"/views/templates/home.html",
 	"/views/templates/speaker.html",
 	"/views/templates/speakers.html",
+	"/views/templates/contact.html",
 	"/api/palestrantes",
 	"/api/eventos",
 	"/manifest.json",
@@ -43,5 +44,10 @@
 	"/assets/images/favicons/favicon-152x152.png",
 	"/assets/images/favicons/favicon-160x160.png",
 	"/assets/images/favicons/favicon-180x180.png",
-	"/assets/images/favicons/favicon-192x192.png"
+	"/assets/images/favicons/favicon-192x192.png",
+	"/assets/js/vendor/async-define.js",
+	"/assets/js/vendor/handlebars.js",
+	"/assets/js/vendor/events.js",
+	"/assets/js/vendor/doc.js",
+	"/assets/js/vendor/ajax.js"
 ]

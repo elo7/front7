@@ -20,21 +20,29 @@ define('template', ['doc', 'handlebars', 'ajax'], function($, handlebars, ajax) 
 	}
 
 	function registerPartial(partialName) {
-		ajax.get('/views/partials/' + partialName + '.html', {}, {
-			success: function(template) {
-				registerPartials(template);
-				handlebars.registerPartial(partialName, template);
+		ajax.get('/views/partials/' + partialName + '.html', {},
+			{
+				success: function(template) {
+					registerPartials(template);
+					handlebars.registerPartial(partialName, template);
+				}
+			}, {
+				cache: true
 			}
-		});
+		);
 	};
 
 	function getTemplate(templateName, cb) {
-		ajax.get('/views/templates/' + templateName + '.html', {}, {
-			success: function(template) {
-				registerPartials(template);
-				cb(handlebars.compile(template));
+		ajax.get('/views/templates/' + templateName + '.html', {},
+			{
+				success: function(template) {
+					registerPartials(template);
+					cb(handlebars.compile(template));
+				}
+			}, {
+				cache: true
 			}
-		});
+		);
 	};
 
 	let loadTemplate = function(config, cb) {
@@ -50,6 +58,7 @@ define('template', ['doc', 'handlebars', 'ajax'], function($, handlebars, ajax) 
 						});
 					}
 				}, {
+					cache: true,
 					async: true
 				});
 			} else {
