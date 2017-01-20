@@ -1,6 +1,7 @@
 importScripts('/assets/js/vendor/idbKeyval.js');
 
-var CACHE_NAME = '0.12.3';
+var CACHE_NAME = '0.12.8',
+		DOMAIN = 'elo7.com';
 
 self.addEventListener('activate', function(event) {
 	event.waitUntil(
@@ -33,8 +34,14 @@ self.addEventListener('install', function(event){
 	  );
 });
 
+var verifyOrigin = function(url){
+	return url.indexOf(self.location.origin) != -1 || url.indexOf(DOMAIN) != -1;
+};
+
 self.addEventListener('fetch', function(event) {
-	if(event.request.url.indexOf(self.location.origin) != -1) {
+	console.log(event.request);
+	if(verifyOrigin(event.request.url)) {
+		console.log(event.request);
 		event.respondWith(
 			// fetch(event.request).catch(function(){
 			// 	return caches.match(event.request);

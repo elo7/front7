@@ -30,6 +30,12 @@ define('template', ['doc', 'handlebars', 'ajax'], function($, handlebars, ajax) 
 				cache: true
 			}
 		);
+		// fetch('/views/partials/' + partialName + '.html')
+		// 	.then(r => r.text())
+		// 	.then(template => {
+		// 		registerPartials(template);
+		// 		handlebars.registerPartial(partialName, template);
+		// 	});
 	};
 
 	function getTemplate(templateName, cb) {
@@ -43,6 +49,12 @@ define('template', ['doc', 'handlebars', 'ajax'], function($, handlebars, ajax) 
 				cache: true
 			}
 		);
+		// fetch('/views/templates/' + templateName + '.html')
+		// 	.then(r => r.text())
+		// 	.then(template => {
+		// 		registerPartials(template);
+		// 		cb(handlebars.compile(template));
+		// 	});
 	};
 
 	let loadTemplate = function(config, cb) {
