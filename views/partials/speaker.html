@@ -1,5 +1,9 @@
 <div class='palestrante' itemprop='performer' itemscope itemtype='http://schema.org/Person'>
-	<img src='{{./avatar}}' alt='{{./name}}' class='avatar' itemprop='image'>
+	{{#if amp}}
+		<amp-img width='120' height='120' src='{{./avatar}}' alt='{{./name}}' class='avatar' itemprop='image'></amp-img>
+	{{else}}
+		<img src='{{./avatar}}' alt='{{./name}}' class='avatar' itemprop='image'>
+	{{/if}}
 	<h3 class='nome' itemprop='name'>
 		<a href='/palestrante/{{./link}}' title='{{./name}}' itemprop='url'>{{./name}}</a>
 	</h3>
@@ -8,10 +12,18 @@
 	</p>
 	<div class="links">
 		<a href='https://twitter.com/{{./twitter}}' target='_blank' title='@{{./twitter}}'>
-			<img src='/assets/images/twitter.png' alt='@{{./twitter}}'>
+			{{#if amp}}
+				<amp-img width='20' height='20' src='/assets/images/twitter.png' alt='@{{./twitter}}'></amp-img>
+			{{else}}
+				<img src='/assets/images/twitter.png' alt='@{{./twitter}}'>
+			{{/if}}
 		</a>
 		<a href='{{./github}}' target='_blank' title='Github: {{./name}}'>
-			<img src='/assets/images/github.png' alt='{{./name}}'>
+			{{#if amp}}
+				<amp-img width='20' height='20' src='/assets/images/github.png' alt='{{./name}}'></amp-img>
+			{{else}}
+				<img src='/assets/images/github.png' alt='{{./name}}'>
+			{{/if}}
 		</a>
 	</div>
 </div>
