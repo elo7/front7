@@ -1,6 +1,23 @@
 {
 	"events" : [
 		{
+			"date": "2017-04-03 18:30",
+			"link": "5-edicao",
+			"lectures": [
+				{
+					"title": "A experiência do usuário no mundo web de hoje",
+					"description": "Nessa primeira parte vamos ver os benefícios que a melhora da experiência do usuário traz e as novas APIs dos navegadores que nos tem ajudado a cumprir essa meta.",
+					"date": "2017-04-03 18:45"
+				},
+				{
+					"title": "Quais são as novas APIs web?",
+					"description": "Nessa segunda parte vamos ver na prática algumas dessas novas APIs que estão modernizando o mundo web: Credential Management API, Payment Request API, Web Share API...",
+					"date": "2017-04-03 19:30"
+				}
+			],
+			"speakers": ["william.mizuta"]
+		},
+		{
 			"date": "2016-12-05 18:30",
 			"link": "4-edicao",
 			"lectures": [

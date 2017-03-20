@@ -1,13 +1,21 @@
 {
   "speakers" : [
     {
+      "name": "William Seiti Mizuta",
+      "link": "william.mizuta",
+      "description": "Engenheiro de Software no Elo7 e instrutor na Caelum formado em Ciências Moleculares pela USP. Líder do time de front-end, tem interesse sobre arquitetura de software e como deixar o código de forma mais organizada possível. Também tem interesse em back-end e agilidade.",
+      "avatar": "/assets/images/speakers/mizuta.jpg",
+      "twitter": "williammizuta",
+      "github": "https://github.com/williammizuta",
+      "current": true
+    },
+    {
       "name": "Erika Takahara",
       "link": "erika.takahara",
       "description": "Formada em Ciências da Computação, tem 26 anos e gosta tanto de front-end quanto de back-end. Começou a carreira na área de criação, mas percebeu que a sua paixão era na área de desenvolvimento. Hoje trabalha como front-end no Elo7. Ela é apaixonada por CSS, HTML e Mangá, não perde um capítulo semanal de One Piece. Ultimamente está estudando sobre progressive web apps e como aplicar isso nos projetos do Elo7.",
       "avatar": "/assets/images/speakers/erika.jpg",
       "twitter": "erikatakahara",
-      "github": "https://github.com/erikatakahara",
-      "current": true
+      "github": "https://github.com/erikatakahara"
     },
     {
       "name": "Tiago Vasconcelos",
@@ -15,8 +23,7 @@
       "description": "Começou a programar para web quando o IE6 era o único navegador que importava, smatphones não existiam e o termo fullstack não era usado, apesar de programar em todas as áreas. Ajudou a fundar e definir a cultura do time front-end Martell. Gosta de ler o One Piece semanal e assistir seu ídolo Cristiano Ronaldo jogar.",
       "avatar": "/assets/images/speakers/tiago.jpg",
       "twitter": "tisvasconcelos",
-      "github": "https://github.com/tisvasconcelos/",
-      "current": true
+      "github": "https://github.com/tisvasconcelos/"
     },
     {
       "name": "Aline Lee Nogueira",
