@@ -134,6 +134,14 @@ body {
 	padding-top: 1em;
 }
 
+.menu {
+	top: 0;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+	position: sticky;
+}
+
 .container {
 	max-width: 1080px;
 	margin: 0 auto;

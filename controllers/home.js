@@ -40,7 +40,7 @@ router.get(['/', '/index.html'], (req, res) => {
 });
 
 router.get('/palestrantes', (req, res) => {
-  res.render('speakers', {speakers: loadSpeakers.getSpeakers});
+  res.render('speakers', loadSpeakers.getSpeakers);
 });
 
 router.get('/palestrante/:link', (req, res) => {

@@ -1,7 +1,8 @@
 <ol>
-	{{#each speakers}}
+	{{#each .}}
 		<li>
-			{{>speaker amp=../amp}}
+			<!-- {{!>speaker amp=../amp}} Comentado por problemas com register partial -->
+			{{>speaker}}
 		</li>
 	{{/each}}
 </ol>

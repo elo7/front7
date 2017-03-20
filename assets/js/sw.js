@@ -1,6 +1,6 @@
 importScripts('/assets/js/vendor/idbKeyval.js');
 
-var CACHE_NAME = '0.12.2';
+var CACHE_NAME = '0.12.3';
 
 self.addEventListener('activate', function(event) {
 	event.waitUntil(
