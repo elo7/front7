@@ -6,8 +6,7 @@
       "description": "Engenheiro de Software no Elo7 e instrutor na Caelum formado em Ciências Moleculares pela USP. Líder do time de front-end, tem interesse sobre arquitetura de software e como deixar o código de forma mais organizada possível. Também tem interesse em back-end e agilidade.",
       "avatar": "/assets/images/speakers/mizuta.jpg",
       "twitter": "williammizuta",
-      "github": "https://github.com/williammizuta",
-      "current": true
+      "github": "https://github.com/williammizuta"
     },
     {
       "name": "Erika Takahara",
@@ -39,7 +38,8 @@
       "description": "É bacharel e mestre em Ciência da Computação, trabalha como engenheiro de software no Elo7 e é um dos instrutores do Alura e um dos autores do livro Coletânea Front-End, da editora Casa do Código. Curte mexer tanto no front quanto no back-end, gosta de filosofar sobre tudo e o Vim é sua plataforma de desenvolvimento preferida.",
       "avatar": "/assets/images/speakers/luiz.jpg",
       "twitter": "srsaude",
-      "github": "https://github.com/luiz"
+      "github": "https://github.com/luiz",
+      "current": true
     },
     {
       "name": "Fernanda Bernardo",
@@ -63,7 +63,8 @@
       "description": "Desenvolvedor apaixonado pelo o que faz, geek de carteirinha, comedor de Camemburger e ciclista nas horas vagas. Se interessa por todas as áreas do desenvolvimento, já se aventurou pela infraestrutura, backend e agora se aventura pelo mobile.",
       "avatar": "/assets/images/speakers/newton.jpg",
       "twitter": "newtonbeck",
-      "github": "https://github.com/newton-beck"
+      "github": "https://github.com/newton-beck",
+      "current": true
     }
   ]
 }
