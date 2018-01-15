@@ -8,12 +8,12 @@
 	<h2 class='titulo'>Agenda</h2>
 	<ol>
 		<li class='atividade'>
-			<h3 class='tema'>Abertura (<time datetime='2016-12-05 18:30'  class='horario'>18h30</time>)</h3>
+      <h3 class='tema'>Abertura (<time datetime='{{lectures.0.date}}'  class='horario'>18h30</time>)</h3>
 			<p class='resumo'>Recepção</p>
 		</li>
 		<li class='atividade' itemprop='subEvent' itemscope itemtype='http://schema.org/Event'>
 			<h3 class='tema' itemprop='name'>{{lectures.0.title}} (<time datetime='{{lectures.0.date}}' class='horario'>18h45</time>)</h3>
-			<meta itemprop='startDate' content='2016-12-05T18:45'>
+			<meta itemprop='startDate' content='{{lectures.0.date}}'>
 			<p class='resumo' itemprop='description'>
 				{{lectures.0.description}}
 			</p>
@@ -23,12 +23,12 @@
 			</address>
 		</li>
 		<li class='atividade'>
-			<h3 class='tema'>Coffee-break (<time datetime='2016-12-05 19:30' class='horario'>19h30</time>)</h3>
+      <h3 class='tema'>Coffee-break (<time datetime='{{lectures.1.date}}' class='horario'>19h30</time>)</h3>
 			<p class='resumo'>Comidaaaa!</p>
 		</li>
 		<li class='atividade' itemprop='subEvent' itemscope itemtype='http://schema.org/Event'>
-			<h3 class='tema' itemprop='name'>{{lectures.1.title}} (<time datetime='2016-12-05 19:45' class='horario'>19h45</time>)</h3>
-			<meta itemprop='startDate' content='2016-12-05T19:45'>
+      <h3 class='tema' itemprop='name'>{{lectures.1.title}} (<time datetime='{{lectures.1.date}}' class='horario'>19h45</time>)</h3>
+      <meta itemprop='startDate' content='{{lectures.1.date}}'>
 			<p class='resumo' itemprop='description'>
 				{{lectures.1.description}}
 			</p>

@@ -5,6 +5,6 @@
 	"url": "https://elo7.github.io/front7/",
 	"amp-url": "https://elo7.github.io/front7?amp=true",
 	"og:image": "https://elo7.github.io/front7/imagens/cover.jpg",
-	"event-speakers": "William Mizuta",
-	"event-subject": "A experiência do usuário no mundo web de hoje e quais são as novas APIs web?"
+	"event-speakers": "Newton Angelini e Luiz Corte Real",
+	"event-subject": "Desenvolvendo seu primeiro aplicativo com React Native e Testando e melhorando a acessibilidade na web"
 }

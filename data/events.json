@@ -1,6 +1,23 @@
 {
 	"events" : [
 		{
+			"date": "2018-01-22 18:30",
+			"link": "6-edicao",
+			"lectures": [
+				{
+					"title": "Testando e melhorando a acessibilidade na web",
+					"description": "Nessa primeira parte, vamos, de forma bem prática, usar componentes comuns da web para explorar e discutir problemas de acessibilidade e técnicas para deixar uma página web mais acessível.",
+					"date": "2018-01-22 18:45"
+				},
+				{
+					"title": "Desenvolvendo seu primeiro aplicativo para Android/iOS com React Native",
+					"description": "Nessa segunda parte vamos desenvolver um aplicativo para Android/iOS usando React Native. Vamos mostrar as diferentes formas de se começar um projeto React Native e as particularidades desta ferramenta.",
+					"date": "2018-01-22 19:30"
+				}
+			],
+			"speakers": ["luiz.real", "newton.angelini"]
+		},
+		{
 			"date": "2017-04-03 18:30",
 			"link": "5-edicao",
 			"lectures": [
