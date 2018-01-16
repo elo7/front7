@@ -7,9 +7,6 @@
 	<h3 class='nome' itemprop='name'>
 		<a href='/palestrante/{{./link}}' title='{{./name}}' itemprop='url'>{{./name}}</a>
 	</h3>
-	<p class='descricao' itemprop='description'>
-		{{./description}}
-	</p>
 	<div class="links">
 		<a href='https://twitter.com/{{./twitter}}' target='_blank' title='@{{./twitter}}'>
 			{{#if amp}}
@@ -26,4 +23,7 @@
 			{{/if}}
 		</a>
 	</div>
+	<p class='descricao' itemprop='description'>
+		{{./description}}
+	</p>
 </div>
