@@ -1,6 +1,6 @@
 importScripts('/assets/js/vendor/idbKeyval.js');
 
-var CACHE_NAME = '0.12.3';
+var CACHE_NAME = '0.12.4';
 
 self.addEventListener('activate', function(event) {
 	event.waitUntil(
@@ -61,10 +61,10 @@ self.addEventListener('sync', function(event) {
 });
 
 self.addEventListener('push', function(event) {
-	const title = '4 Edição do Front7';
+	const title = '6 Edição do Front7';
 	const options = {
 		icon: '/assets/images/favicons/favicon-144x144.png',
-		body: 'Venha conhecer mais sobre PWA no dia 05/12!',
+		body: 'Venha conhecer mais sobre acessibilidade e React Native dia 22/01',
 		tag: 'front7'
 	};
 
